@@ -1,0 +1,25 @@
+{
+  "resources": [],
+  "version": "v3",
+  "type": "container",
+  "monorepo": true,
+  "smartContainerBuildTarget": "main",
+  "overrided": {
+    "linkedFolders": [],
+    "ignoreDepsPattern": [
+      "*"
+    ],
+    "includeAsDev": [],
+    "includeOnly": [],
+    "dependencies": {}
+  },
+  "linkedProjects": ['main'],
+  "linkedRepos": [],
+  "libReleaseOptions": {
+    "nodts": false,
+    "obscure": false,
+    "ugly": false,
+    "includeNodeModules": false
+  },
+  "smart": true
+}
