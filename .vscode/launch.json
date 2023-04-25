@@ -19,6 +19,25 @@
       "presentation": {
         "group": "workspaceServers"
       }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Server @simple-org/second",
+      "cwd": "${workspaceFolder}/dist/simple-org/second",
+      "program": "${workspaceFolder}/dist/simple-org/second/run.js",
+      "args": [
+        "child=second"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register",
+        "--experimental-worker"
+      ],
+      "presentation": {
+        "group": "workspaceServers"
+      }
     }
   ]
 }

@@ -9,8 +9,8 @@
     "includeOnly": [],
     "dependencies": {}
   },
-  "linkedProjects": ['main','second'],
-  "smartContainerBuildTarget": "main",
+  "linkedProjects": [],
+  "smartContainerBuildTarget": "",
   "linkedRepos": [],
   "libReleaseOptions": {
     "nodts": false,
@@ -19,7 +19,5 @@
     "includeNodeModules": false
   },
   "version": "v3",
-  "type": "container",
-  "monorepo": true,
-  "smart": true
+  "type": "isomorphic-lib"
 }
