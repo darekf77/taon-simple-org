@@ -1,5 +1,5 @@
 {
-  "name": "simple-org",
+  "name": "firedev-simple-org",
   "version": "0.0.6",
   "dependencies": {
     "@angular-devkit/build-angular": "~13.3.9",

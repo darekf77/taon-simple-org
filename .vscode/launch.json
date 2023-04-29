@@ -4,9 +4,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Server @simple-org/main",
-      "cwd": "${workspaceFolder}/dist/simple-org/main",
-      "program": "${workspaceFolder}/dist/simple-org/main/run.js",
+      "name": "Launch Server @firedev-simple-org/main",
+      "cwd": "${workspaceFolder}/dist/firedev-simple-org/main",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/main/run.js",
       "args": [
         "child=main"
       ],
@@ -23,9 +23,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Server @simple-org/second",
-      "cwd": "${workspaceFolder}/dist/simple-org/second",
-      "program": "${workspaceFolder}/dist/simple-org/second/run.js",
+      "name": "Launch Server @firedev-simple-org/second",
+      "cwd": "${workspaceFolder}/dist/firedev-simple-org/second",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/second/run.js",
       "args": [
         "child=second"
       ],
