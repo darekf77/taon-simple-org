@@ -34,8 +34,7 @@ export class MainComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    Firedev.initNgZone(this.ngZone);
-    await start();
+
   }
 }
 //#endregion
