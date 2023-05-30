@@ -28,14 +28,7 @@ const routes: Routes = [
   styleUrls: ['./app.scss'],
   templateUrl: './app.html',
 })
-export class MainComponent implements OnInit {
-  constructor(
-    private ngZone: NgZone
-  ) { }
-
-  async ngOnInit() {
-
-  }
+export class MainComponent {
 }
 //#endregion
 

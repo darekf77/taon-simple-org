@@ -1,35 +1,35 @@
 //#region @notForNpm
 
 //#region @browser
-    import { NgModule } from '@angular/core';
-    import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
-    @Component({
-      selector: 'app-second',
-      template: 'hello from second'
-    })
-    export class SecondComponent implements OnInit {
-      constructor() { }
+@Component({
+  selector: 'app-second',
+  template: 'hello from second'
+})
+export class SecondComponent implements OnInit {
+  constructor() { }
 
-      ngOnInit() { }
-    }
+  ngOnInit() { }
+}
 
-    @NgModule({
-      imports: [],
-      exports: [SecondComponent],
-      declarations: [SecondComponent],
-      providers: [],
-    })
-    export class SecondModule { }
-    //#endregion
+@NgModule({
+  imports: [],
+  exports: [SecondComponent],
+  declarations: [SecondComponent],
+  providers: [],
+})
+export class SecondModule { }
+//#endregion
 
-    //#region @backend
-    async function start(port: number) {
-      console.log('hello world from backend');
-    }
+//#region @backend
+async function start(port: number) {
+  console.log('hello world from backend');
+}
 
-    export default start;
+export default start;
 
 //#endregion
 
