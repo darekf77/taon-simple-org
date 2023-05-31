@@ -2,12 +2,15 @@
   "resources": ['README.md','logo.png'],
   "overrided": {
     "linkedFolders": [],
+
     "ignoreDepsPattern": [
       "*"
     ],
+
     "includeAsDev": [],
     "includeOnly": [],
-    "dependencies": {}
+    "dependencies": {},
+    'npmFixes': [],
   },
   "linkedProjects": [],
   "smartContainerBuildTarget": "",
