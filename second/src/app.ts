@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-second',
-  template: 'hello from second'
+  template: `
+
+
+  hello from second project
+  <!-- <firedev-file  src="second/src/assets/shared/logo.png" > </firedev-file> -->
+
+  `,
+  styles: [`
+    body {
+      margin: 0px !important;
+    }
+  `],
 })
 export class SecondComponent implements OnInit {
   constructor() { }
@@ -24,13 +35,12 @@ export class SecondComponent implements OnInit {
 export class SecondModule { }
 //#endregion
 
-//#region @backend
 async function start(port: number) {
   console.log('hello world from backend');
 }
 
 export default start;
 
-//#endregion
+console.log('kruwa')
 
 //#endregion
