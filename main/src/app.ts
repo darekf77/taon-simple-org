@@ -13,22 +13,25 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 //#region routes
 const routes: Routes = [
-  // {
-  //   path: 'pazymodulerouterpath',
-  //   loadChildren: () => import('lazymodule')
-  //     .then(m => m.LazyModule),
-  // },
+  {
+    path: '',
+    loadChildren: () => import('@firedev-simple-org/main')
+      .then(m => m.LazyModule),
+  },
 ];
 //#endregion
 
 //#region main component
 @Component({
-  selector: 'app-my-entity',
+  selector: 'app-main',
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./app.scss'],
   templateUrl: './app.html',
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
+  async ngOnInit() {
+
+  }
 }
 //#endregion
 
@@ -72,7 +75,7 @@ async function start() {
   //#region @backend
   if (Firedev.isNode) {
     context.node.app.get('/hello', (req, res) => {
-      res.send('Hello my-entity')
+      res.send('Hello main')
     })
   }
   //#endregion

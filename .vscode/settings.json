@@ -7,6 +7,7 @@
   "workbench.colorTheme": "Default Light+",
   "files.exclude": {
     "**/*____ORIGINAL____.ts": true,
+    "_changelog": true,
     "tsconfig.backend.dist.json": true,
     "tsconfig.backend.bundle.json": true,
     "tsconfig.backend.dist.json.filetemplate": true,
@@ -42,6 +43,7 @@
     "recent.json": true,
     "angular.json": true,
     "main/**/*____ORIGINAL____.ts": true,
+    "main/_changelog": true,
     "main/tsconfig.backend.dist.json": true,
     "main/tsconfig.backend.bundle.json": true,
     "main/tsconfig.backend.dist.json.filetemplate": true,
@@ -99,6 +101,7 @@
     "main/tsconfig.json.filetemplate": true,
     "main/tsconfig.json": true,
     "second/**/*____ORIGINAL____.ts": true,
+    "second/_changelog": true,
     "second/tsconfig.backend.dist.json": true,
     "second/tsconfig.backend.bundle.json": true,
     "second/tsconfig.backend.dist.json.filetemplate": true,

@@ -2,12 +2,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { MyEntityComponent } from './lazy.component';
+import { LazyComponent } from './lazy.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MyEntityComponent,
+    component: LazyComponent,
   },
   // {
   //   path: 'anothermodulepath',
@@ -21,7 +21,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [MyEntityComponent],
+  declarations: [LazyComponent],
 })
-export class MyEntityModule { }
+export class LazyModule { }
 //#endregion
