@@ -1,4 +1,33 @@
 {
+  "tnp": {
+    "resources": [],
+    "overrided": {
+      "linkedFolders": [],
+      "ignoreDepsPattern": [
+        "*"
+      ],
+      "includeAsDev": [],
+      "includeOnly": [],
+      "dependencies": {},
+      "npmFixes": []
+    },
+    "linkedProjects": [
+      "main",
+      "second"
+    ],
+    "smartContainerBuildTarget": "main",
+    "linkedRepos": [],
+    "libReleaseOptions": {
+      "nodts": false,
+      "obscure": false,
+      "ugly": false,
+      "includeNodeModules": false
+    },
+    "version": "v3",
+    "type": "container",
+    "monorepo": true,
+    "smart": true
+  },
   "name": "firedev-simple-org",
   "version": "0.0.18",
   "dependencies": {

@@ -1,4 +1,31 @@
 {
+  "tnp": {
+    "resources": [
+      "README.md",
+      "logo.png"
+    ],
+    "overrided": {
+      "linkedFolders": [],
+      "ignoreDepsPattern": [
+        "*"
+      ],
+      "includeAsDev": [],
+      "includeOnly": [],
+      "dependencies": {},
+      "npmFixes": []
+    },
+    "linkedProjects": [],
+    "smartContainerBuildTarget": "",
+    "linkedRepos": [],
+    "libReleaseOptions": {
+      "nodts": false,
+      "obscure": false,
+      "ugly": false,
+      "includeNodeModules": false
+    },
+    "version": "v3",
+    "type": "isomorphic-lib"
+  },
   "name": "second",
   "version": "0.0.0",
   "dependencies": {
