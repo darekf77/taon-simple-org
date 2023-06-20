@@ -1,6 +1,6 @@
-//#region @notForNpm
 //#region imports
 import { Firedev } from 'firedev';
+import { _ } from 'tnp-core';
 const host = 'http://localhost:4199';
 //#region @browser
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
@@ -13,11 +13,11 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 //#region routes
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('@firedev-simple-org/main')
-      .then(m => m.LazyModule),
-  },
+  // {
+  //   path: 'pazymodulerouterpath',
+  //   loadChildren: () => import('lazymodule')
+  //     .then(m => m.LazyModule),
+  // },
 ];
 //#endregion
 
@@ -42,6 +42,7 @@ export class MainComponent implements OnInit {
       useHash: true,
       preloadingStrategy: PreloadAllModules,
       enableTracing: false,
+      bindToComponentInputs: true
     }),
   ],
   exports: [MainComponent],
@@ -83,4 +84,3 @@ async function start() {
 //#endregion
 
 export default start;
-//#endregion
