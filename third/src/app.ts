@@ -1,5 +1,5 @@
 //#region @notForNpm
-
+import { Helpers } from 'tnp-core';
 //#region @browser
 import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
@@ -27,7 +27,9 @@ export class IsomorphicLibV4Module { }
 
 
 async function start(port: number) {
+  await Helpers.wait(3)
   console.log('hello world');
+  process.stdin.resume()
 }
 
 export default start;
