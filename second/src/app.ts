@@ -55,6 +55,7 @@ export class SecondModule { }
 
 //#region firedev start function
 async function start() {
+
   // Firedev.enableProductionMode();
 
   const context = await Firedev.init({
@@ -76,7 +77,7 @@ async function start() {
   //#region @backend
   if (Firedev.isNode) {
     context.node.app.get('/hello', (req, res) => {
-      res.send('Hello second')
+      res.send('Hello secaaond')
     })
   }
   //#endregion

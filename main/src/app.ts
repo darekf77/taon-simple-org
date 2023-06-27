@@ -76,7 +76,7 @@ async function start() {
   //#region @backend
   if (Firedev.isNode) {
     context.node.app.get('/hello', (req, res) => {
-      res.send('Hello main')
+      res.send('Hellossasdaasasddsddsd main')
     })
   }
   //#endregion
