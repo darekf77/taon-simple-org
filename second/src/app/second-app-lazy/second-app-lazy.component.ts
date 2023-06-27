@@ -1,13 +1,14 @@
 //#region @browser
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { _ } from 'tnp-core';
 
 @Component({
-  selector: 'app-lazy',
-  templateUrl: './lazy.component.html',
-  styleUrls: ['./lazy.component.scss']
+  selector: 'app-second-app-lazy',
+  templateUrl: './second-app-lazy.component.html',
+  styleUrls: ['./second-app-lazy.component.scss']
 })
-export class LazyComponent implements OnInit {
+export class SecondAppLazyComponent implements OnInit {
   handlers: Subscription[] = [];
   constructor() { }
 

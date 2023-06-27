@@ -2,17 +2,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { LazyComponent } from './lazy.component';
+import { MainRoutingInAppContainer } from './main-routing-in-app.container';
 
 const routes: Routes = [
   {
     path: '',
-    component: LazyComponent,
+    component: MainRoutingInAppContainer,
+    // pathMatch: 'full' // => when using variables in other routers
   },
   // {
   //   path: 'anothermodulepath',
   //   loadChildren: () => import('anothermodule')
   //     .then(m => m.AnotherLazyModule),
+  // },
+  // {
+  //   path: 'other/:otherId',
+  //   loadChildren: () => import('othermodule')
+  //     .then(m => m.OtherLazyModule),
   // },
 ];
 
@@ -21,7 +27,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [LazyComponent],
+  declarations: [MainRoutingInAppContainer],
 })
-export class LazyModule { }
+export class MainRoutingInAppContainerModule { }
 //#endregion

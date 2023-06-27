@@ -12,7 +12,7 @@
     "dependencies": {},
     'npmFixes': [],
   },
-  "linkedProjects": ['main','second'],
+  "linkedProjects": ['main', 'second', 'third'],
   "smartContainerBuildTarget": "main",
   "linkedRepos": [],
   "libReleaseOptions": {

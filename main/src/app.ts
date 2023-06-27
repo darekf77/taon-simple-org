@@ -13,11 +13,11 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 //#region routes
 const routes: Routes = [
-  // {
-  //   path: 'pazymodulerouterpath',
-  //   loadChildren: () => import('lazymodule')
-  //     .then(m => m.LazyModule),
-  // },
+  {
+    path: '',
+    loadChildren: () => import('./app/main-routing-in-app/main-routing-in-app.container.module')
+      .then(m => m.MainRoutingInAppContainerModule),
+  },
 ];
 //#endregion
 

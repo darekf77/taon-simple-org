@@ -38,6 +38,25 @@
       "presentation": {
         "group": "workspaceServers"
       }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Server @firedev-simple-org/third",
+      "cwd": "${workspaceFolder}/dist/firedev-simple-org/third",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/third/run.js",
+      "args": [
+        "child=third"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register",
+        "--experimental-worker"
+      ],
+      "presentation": {
+        "group": "workspaceServers"
+      }
     }
   ]
 }

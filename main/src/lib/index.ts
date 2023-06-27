@@ -1,2 +1,1 @@
-export * from './my-organization-proj';
-export * from './lazy'
+export * from './my-main-lib-cmp';
