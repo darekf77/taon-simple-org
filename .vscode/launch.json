@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "Launch Server @firedev-simple-org/main",
       "cwd": "${workspaceFolder}/dist/firedev-simple-org/main",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/main/run.js",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/main/run-org.js",
       "args": [
         "child=main"
       ],
@@ -25,7 +25,7 @@
       "request": "launch",
       "name": "Launch Server @firedev-simple-org/second",
       "cwd": "${workspaceFolder}/dist/firedev-simple-org/second",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/second/run.js",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/second/run-org.js",
       "args": [
         "child=second"
       ],
@@ -44,7 +44,7 @@
       "request": "launch",
       "name": "Launch Server @firedev-simple-org/third",
       "cwd": "${workspaceFolder}/dist/firedev-simple-org/third",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/third/run.js",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/third/run-org.js",
       "args": [
         "child=third"
       ],
