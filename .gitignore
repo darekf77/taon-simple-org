@@ -38,9 +38,11 @@ Thumbs.db
 /npm-debug.log*
 /.sass-cache
 /.sourcemaps
+/tsconfig.json
 /.npmrc
 /tslint.json
 /.editorconfig
+/tsconfig.json.filetemplate
 /tsconfig.backend.dist.json
 /tsconfig.backend.bundle.json
 

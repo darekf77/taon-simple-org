@@ -2,6 +2,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { _ } from 'tnp-core';
+import { myOrgProj } from '@firedev-simple-org/third'
 
 @Component({
   selector: 'app-main-routing-in-app',
