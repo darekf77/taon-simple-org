@@ -33,7 +33,7 @@
     "smart": true
   },
   "name": "firedev-simple-org",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "dependencies": {
     "@angular-devkit/build-angular": "~16.0.5",
     "@angular-devkit/core": "~16.0.5",
@@ -313,5 +313,5 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {},
-  "lastBuildTagHash": "465c4b9f9e1cab2bd3919c05b05819bd15541a94"
+  "lastBuildTagHash": "17c84b3d3f0d92d3077ac5c0a4f9b6508456fde4"
 }
