@@ -3,10 +3,8 @@
     "**/*____ORIGINAL____.ts": true,
     "_changelog": true,
     "tsconfig.backend.dist.json": true,
-    "tsconfig.backend.bundle.json": true,
     "tsconfig.backend.dist.json.filetemplate": true,
-    "tsconfig.backend.bundle.json.filetemplate": true,
-    "webpack.backend-bundle-build.js": true,
+    "webpack.backend-dist-build.js": true,
     "node_modules": true,
     "tmp*": true,
     "dist*": true,
@@ -27,10 +25,7 @@
     ".sourcemaps": true,
     "tsconfig.isomorphic.json": true,
     "tsconfig.isomorphic-flat-dist.json": true,
-    "tsconfig.isomorphic-flat-bundle.json": true,
     "tsconfig.browser.json": true,
-    ".vscode/launch.json": true,
-    ".vscode/tasks.json": true,
     "tsconfig.json": true,
     ".npmrc": true,
     "tslint.json": true,
@@ -43,16 +38,12 @@
     "run-org.js": true,
     "tsconfig.isomorphic.json.filetemplate": true,
     "tsconfig.isomorphic-flat-dist.json.filetemplate": true,
-    "tsconfig.isomorphic-flat-bundle.json.filetemplate": true,
     "tsconfig.browser.json.filetemplate": true,
-    ".vscode/launch.json.filetemplate": true,
-    ".vscode/tasks.json.filetemplate": true,
     "tsconfig.json.filetemplate": true,
     ".gitignore": true,
     ".npmignore": true,
     ".babelrc": true,
     "package.json_devDependencies.json": true,
-    "docs": true,
     "logo.svg": true,
     "package.json_tnp.json": true
   },
@@ -69,5 +60,10 @@
   "tslint.autoFixOnSave": true,
   "eslint.enable": false,
   "tslint.enable": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "search.exclude": {
+    "docs": true,
+    "projects": true,
+    "bin": true
+  }
 }

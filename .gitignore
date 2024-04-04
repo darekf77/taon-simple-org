@@ -11,9 +11,14 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+app.hosts.ts
 /linked-repos
 
 
+/src/lib/lib-info.md
+/src/migrations/migrations-info.md
+/src/tests/mocha-tests-info.md
+/src/assets/shared/shared_folder_info.txt
 
 # System Files
 .DS_Store
@@ -43,8 +48,8 @@ Thumbs.db
 /tslint.json
 /.editorconfig
 /tsconfig.json.filetemplate
+/tsconfig.json.filetemplate
 /tsconfig.backend.dist.json
-/tsconfig.backend.bundle.json
 
 
 
@@ -56,3 +61,5 @@ Thumbs.db
 *.filetemplate
 
 /angular.json
+
+/.vscode/launch.json
