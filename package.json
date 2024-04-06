@@ -25,7 +25,8 @@
       "includeNodeModules": false,
       "cliBuildNoDts": false,
       "cliBuildObscure": false,
-      "cliBuildIncludeNodeModules": false
+      "cliBuildIncludeNodeModules": false,
+      "cliBuildUglify": false
     },
     "version": "v4",
     "type": "container",
@@ -313,5 +314,6 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {},
-  "lastBuildTagHash": "a15af6e99b33b1c854d7ef41bd4ff6474906a3f7"
+  "lastBuildTagHash": "a15af6e99b33b1c854d7ef41bd4ff6474906a3f7",
+  "main": "dist/app.electron.js"
 }
