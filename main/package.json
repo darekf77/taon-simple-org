@@ -21,7 +21,8 @@
       "includeNodeModules": false,
       "cliBuildNoDts": false,
       "cliBuildObscure": false,
-      "cliBuildIncludeNodeModules": false
+      "cliBuildIncludeNodeModules": false,
+      "cliBuildUglify": false
     },
     "version": "v4",
     "type": "isomorphic-lib"
@@ -304,5 +305,6 @@
     "yup": "1.1.1",
     "zone.js": "~0.13.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "dist/app.electron.js"
 }
