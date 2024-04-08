@@ -303,6 +303,5 @@
     "yup": "1.1.1",
     "zone.js": "~0.13.0"
   },
-  "devDependencies": {},
-  "main": "dist/app.electron.js"
+  "devDependencies": {}
 }
