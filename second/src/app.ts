@@ -1,87 +1,93 @@
-//#region imports
+//#region @notForNpm
 import { Firedev } from 'firedev';
-import { _ } from 'tnp-core';
-const host = 'http://localhost:4199';
+import { Observable, map } from 'rxjs';
+
+import { HOST_BACKEND_PORT } from './app.hosts';
 //#region @browser
-import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-//#endregion
-//#endregion
+import { CommonModule } from '@angular/common';
 
-//#region @browser
-
-//#region routes
-const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () => import('./app/second-app-lazy/second-app-lazy.module')
-      .then(m => m.SecondAppLazyModule),
-  },
-];
-//#endregion
-
-//#region main component
 @Component({
   selector: 'app-second',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./app.scss'],
-  templateUrl: './app.html',
+  template: `hello from second<br>
+    <br>
+    users from backend
+    <ul>
+      <li *ngFor="let user of (users$ | async)"> {{ user | json }} </li>
+    </ul>
+  `,
+  styles: [` body { margin: 0px !important; } `],
 })
 export class SecondComponent implements OnInit {
-  async ngOnInit() {
+  users$: Observable<User[]> = User.ctrl.getAll().received.observable
+    .pipe(map(data => data.body.json));
 
-  }
+  constructor() { }
+  ngOnInit() { }
 }
-//#endregion
 
-//#region main module
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      useHash: true,
-      preloadingStrategy: PreloadAllModules,
-      enableTracing: false,
-      bindToComponentInputs: true
-    }),
-  ],
+  imports: [CommonModule],
   exports: [SecondComponent],
   declarations: [SecondComponent],
   providers: [],
 })
 export class SecondModule { }
 //#endregion
-//#endregion
 
-//#region firedev start function
-async function start() {
+@Firedev.Entity({ className: 'User' })
+class User extends Firedev.Base.Entity {
+  public static ctrl?: UserController;
+  //#region @websql
+  @Firedev.Orm.Column.Generated()
+  //#endregion
+  id?: string | number;
 
-  // Firedev.enableProductionMode();
+}
 
-  const context = await Firedev.init({
-    host,
-    controllers: [
-      // PUT FIREDEV CONTORLLERS HERE
-    ],
-    entities: [
-      // PUT FIREDEV ENTITIES HERE
-    ],
-    //#region @websql
-    config: {
-      type: 'better-sqlite3',
-      database: 'tmp-db.sqlite',
-      logging: false,
-    }
-    //#endregion
-  });
-  //#region @backend
-  if (Firedev.isNode) {
-    context.node.app.get('/hello', (req, res) => {
-      res.send('Hello secaaond')
-    })
+@Firedev.Controller({ className: 'UserController' })
+class UserController extends Firedev.Base.CrudController<User> {
+  entity = () => User;
+  //#region @websql
+  async initExampleDbData(): Promise<void> {
+    await this.repository.save(new User())
   }
   //#endregion
 }
-//#endregion
+
+async function start() {
+  console.log('hello world');
+  console.log('Your server will start on port ' + HOST_BACKEND_PORT);
+  const host = 'http://localhost:' + HOST_BACKEND_PORT;
+
+  const context = await Firedev.createContext({
+    host,
+    contextName: 'context',
+    controllers: {
+      UserController,
+      // PUT FIREDEV CONTORLLERS HERE
+    },
+    entities: {
+      User,
+      // PUT FIREDEV ENTITIES HERE
+    },
+    //#region @websql
+    database: true,
+    //#endregion
+  });
+  await context.initialize();
+
+  if (Firedev.isBrowser) {
+    const users = (await User.ctrl.getAll().received).body.json;
+    console.log({
+      'users from backend': users
+    })
+  }
+}
 
 export default start;
+
+
+
+//#endregion

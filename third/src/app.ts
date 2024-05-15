@@ -1,5 +1,5 @@
 //#region @notForNpm
-import { Helpers } from 'tnp-core';
+import { Helpers } from 'tnp-core/src';
 //#region @browser
 import { NgModule } from '@angular/core';
 import { Component, OnInit } from '@angular/core';

@@ -1,7 +1,7 @@
 //#region @browser
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { _ } from 'tnp-core';
+import { _ } from 'tnp-core/src';
 
 @Component({
   selector: 'app-my-main-lib-cmp',

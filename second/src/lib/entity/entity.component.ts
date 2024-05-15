@@ -1,8 +1,8 @@
 //#region @browser
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FiredevFullMaterialModule } from 'firedev-ui';
-import { StaticColumnsModule } from 'static-columns';
+import { FiredevFullMaterialModule } from 'firedev-ui/src';
+import { StaticColumnsModule } from 'static-columns/src';
 import { EntityHelpers } from './entity.helpers';
 import { Entity } from './entity';
 

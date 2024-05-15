@@ -1,17 +1,26 @@
 import type { Entity } from "./entity";
-import { _ } from 'tnp-core';
+import { _ } from 'tnp-core/src';
 //#region @websql
-import { NumberColumn, PropsEntitySQL, QueryTable, StringColumn } from "firedev-type-sql";
+import { NumberColumn, PropsEntitySQL, QueryTable, StringColumn } from "firedev-type-sql/src";
 const entityTableName = _.snakeCase('entity').toUpperCase();
 //#endregion
 
 export type EntityNonColumnsKeys =
   'ctrl' |
-  'clone';
+  'clone' |
+  '__endpoint_context__' |
+  'inject' |
+  'clone' |
+  '_'
+  ;
 
 export const EntityNonColumnsKeysArr = [
   'ctrl',
   'clone',
+  'clone',
+  '__endpoint_context__',
+  'inject',
+  "_",
 ] as EntityNonColumnsKeys[];
 
 export type IEntity = Partial<Entity>;

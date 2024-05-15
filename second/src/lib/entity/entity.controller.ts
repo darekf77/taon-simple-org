@@ -1,6 +1,6 @@
-import { Firedev } from 'firedev';
+import { Firedev } from 'firedev/src';
 import { Entity } from './entity';
-import { _ } from 'tnp-core';
+import { _ } from 'tnp-core/src';
 import {
   randUserName,
   randAddress,
@@ -11,11 +11,10 @@ import { ENTITY } from './entity.models';
 //#endregion
 
 @Firedev.Controller({
-  className: 'EntityController',
-  entity: Entity
+  className: 'EntityController'
 })
-export class EntityController extends Firedev.Base.Controller<any> {
-  entity: typeof Entity;
+export class EntityController extends Firedev.Base.CrudController<any> {
+  entity = ()=> Entity;
 
   @Firedev.Http.GET()
   hello(): Firedev.Response<string> {
@@ -45,7 +44,7 @@ export class EntityController extends Firedev.Base.Controller<any> {
   ): Firedev.Response<Entity> {
     //#region @websqlFunc
     return async () => {
-      let item = this.entity.from(body);
+      let item = this.entity().from(body);
       item = await this.repository.save(item);
       return item;
     }

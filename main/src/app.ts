@@ -1,6 +1,6 @@
 //#region imports
-import { Firedev } from 'firedev';
-import { _ } from 'tnp-core';
+import { Firedev } from 'firedev/src';
+import { _ } from 'tnp-core/src';
 const host = 'http://localhost:4199';
 //#region @browser
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
@@ -75,9 +75,9 @@ async function start() {
   });
   //#region @backend
   if (Firedev.isNode) {
-    context.node.app.get('/hello', (req, res) => {
-      res.send('Hellossasdaasasddsddsd main')
-    })
+    // context.node.app.get('/hello', (req, res) => {
+    //   res.send('Hellossasdaasasddsddsd main')
+    // })
   }
   //#endregion
 }

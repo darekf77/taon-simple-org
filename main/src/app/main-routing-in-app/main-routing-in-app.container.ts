@@ -1,8 +1,8 @@
 //#region @browser
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { _ } from 'tnp-core';
-import { myOrgProj } from '@firedev-simple-org/third'
+import { _ } from 'tnp-core/src';
+import { myOrgProj } from '@firedev-simple-org/third/src'
 
 @Component({
   selector: 'app-main-routing-in-app',

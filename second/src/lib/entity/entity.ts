@@ -1,5 +1,5 @@
-import { Firedev } from 'firedev';
-import { _ } from 'tnp-core';
+import { Firedev } from 'firedev/src';
+import { _ } from 'tnp-core/src';
 import type { EntityController } from './entity.controller';
 import {
   EntityNonColumnsKeys, EntityNonColumnsKeysArr,
@@ -12,7 +12,7 @@ import {
   className: 'Entity',
   defaultModelValues
 })
-export class Entity extends Firedev.Base.Entity<any> {
+export class Entity extends Firedev.Base.Entity {
 
   //#region static
   static ctrl: EntityController;
