@@ -1,5 +1,6 @@
 {
   "resources": [],
+
   "overrided": {
     "linkedFolders": [],
 
@@ -12,9 +13,10 @@
     "dependencies": {},
     'npmFixes': [],
   },
-  "linkedProjects": ['main', 'second', 'third'],
+
   "smartContainerBuildTarget": "main",
   "linkedRepos": [],
+
   "libReleaseOptions": {
     "nodts": false,
     "obscure": false,
@@ -25,8 +27,9 @@
     'cliBuildIncludeNodeModules': false,
     'cliBuildUglify': false,
   },
+
   "version": "v4",
   "type": "container",
   "monorepo": true,
-  "smart": true
+  "smart": true,
 }

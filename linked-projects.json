@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "relativeClonePath": "main",
+      "repoUrl": "https://github.com/darekf77/main.git"
+    },
+    {
+      "relativeClonePath": "second",
+      "repoUrl": "https://github.com/darekf77/second.git"
+    },
+    {
+      "relativeClonePath": "third",
+      "repoUrl": "https://github.com/darekf77/third.git"
+    }
+  ]
+}
