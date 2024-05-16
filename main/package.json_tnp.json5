@@ -1,5 +1,6 @@
 {
   "resources": [],
+
   "overrided": {
     "linkedFolders": [],
 
@@ -12,9 +13,10 @@
     "dependencies": {},
     'npmFixes': [],
   },
-  "linkedProjects": [],
+
   "smartContainerBuildTarget": "",
   "linkedRepos": [],
+
   "libReleaseOptions": {
     "nodts": false,
     "obscure": false,
@@ -25,6 +27,7 @@
     'cliBuildIncludeNodeModules': false,
     'cliBuildUglify': false,
   },
+
   "version": 'v4',
-  "type": "isomorphic-lib"
+  "type": "isomorphic-lib",
 }

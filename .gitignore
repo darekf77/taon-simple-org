@@ -50,11 +50,10 @@ Thumbs.db
 /tsconfig.json.filetemplate
 /tsconfig.json.filetemplate
 /tsconfig.backend.dist.json
-
-
-
-
 # container/workspace git projects
+# PREFIX
+/*
+# LINKED PROJECTS
 
 
 # =====================
