@@ -14,14 +14,10 @@
     "smartContainerBuildTarget": "",
     "linkedRepos": [],
     "libReleaseOptions": {
-      "nodts": false,
-      "obscure": false,
-      "ugly": false,
-      "includeNodeModules": false,
       "cliBuildNoDts": false,
       "cliBuildObscure": false,
-      "cliBuildIncludeNodeModules": false,
-      "cliBuildUglify": false
+      "cliBuildUglify": false,
+      "cliBuildIncludeNodeModules": false
     }
   },
   "name": "third",
