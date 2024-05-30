@@ -37,6 +37,10 @@ Thumbs.db
 /backup
 /module
 /www
+/.eslintrc.json
+/.prettierignore
+/.prettierrc
+/.editorconfig
 /Thumbs.db
 /.DS_Store
 /**/.DS_Store
@@ -44,15 +48,12 @@ Thumbs.db
 /.sass-cache
 /.sourcemaps
 /tsconfig.json
-/.npmrc
-/tslint.json
-/.editorconfig
 /tsconfig.json.filetemplate
 /tsconfig.json.filetemplate
 /tsconfig.backend.dist.json
 # container/workspace git projects
 # PREFIX
-/*
+
 # LINKED PROJECTS
 
 

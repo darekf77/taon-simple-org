@@ -18,11 +18,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-  ],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   declarations: [SecondAppLazyComponent],
 })
-export class SecondAppLazyModule { }
+export class SecondAppLazyModule {}
 //#endregion

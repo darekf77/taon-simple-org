@@ -10,21 +10,27 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-second',
-  template: `hello from second<br>
-    <br>
+  template: `hello from second<br />
+    <br />
     users from backend
     <ul>
-      <li *ngFor="let user of (users$ | async)"> {{ user | json }} </li>
-    </ul>
-  `,
-  styles: [` body { margin: 0px !important; } `],
+      <li *ngFor="let user of users$ | async">{{ user | json }}</li>
+    </ul> `,
+  styles: [
+    `
+      body {
+        margin: 0px !important;
+      }
+    `,
+  ],
 })
 export class SecondComponent implements OnInit {
-  users$: Observable<User[]> = User.ctrl.getAll().received.observable
-    .pipe(map(data => data.body.json));
+  users$: Observable<User[]> = User.ctrl
+    .getAll()
+    .received.observable.pipe(map(data => data.body.json));
 
-  constructor() { }
-  ngOnInit() { }
+  constructor() {}
+  ngOnInit() {}
 }
 
 @NgModule({
@@ -33,7 +39,7 @@ export class SecondComponent implements OnInit {
   declarations: [SecondComponent],
   providers: [],
 })
-export class SecondModule { }
+export class SecondModule {}
 //#endregion
 
 @Firedev.Entity({ className: 'User' })
@@ -43,7 +49,6 @@ class User extends Firedev.Base.Entity {
   @Firedev.Orm.Column.Generated()
   //#endregion
   id?: string | number;
-
 }
 
 @Firedev.Controller({ className: 'UserController' })
@@ -51,7 +56,7 @@ class UserController extends Firedev.Base.CrudController<User> {
   entity = () => User;
   //#region @websql
   async initExampleDbData(): Promise<void> {
-    await this.repository.save(new User())
+    await this.repository.save(new User());
   }
   //#endregion
 }
@@ -81,13 +86,11 @@ async function start() {
   if (Firedev.isBrowser) {
     const users = (await User.ctrl.getAll().received).body.json;
     console.log({
-      'users from backend': users
-    })
+      'users from backend': users,
+    });
   }
 }
 
 export default start;
-
-
 
 //#endregion

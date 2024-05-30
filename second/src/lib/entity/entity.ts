@@ -1,23 +1,18 @@
 import { Firedev } from 'firedev/src';
 import { _ } from 'tnp-core/src';
 import type { EntityController } from './entity.controller';
-import {
-  EntityNonColumnsKeys, EntityNonColumnsKeysArr,
-} from './entity.models';
-import {
-  defaultModelValuesEntity as defaultModelValues
-} from './entity.models';
+import { EntityNonColumnsKeys, EntityNonColumnsKeysArr } from './entity.models';
+import { defaultModelValuesEntity as defaultModelValues } from './entity.models';
 
 @Firedev.Entity({
   className: 'Entity',
-  defaultModelValues
+  defaultModelValues,
 })
 export class Entity extends Firedev.Base.Entity {
-
   //#region static
   static ctrl: EntityController;
   static from(obj: Omit<Partial<Entity>, EntityNonColumnsKeys>) {
-    obj = _.merge(defaultModelValues, _.omit(obj, EntityNonColumnsKeysArr))
+    obj = _.merge(defaultModelValues, _.omit(obj, EntityNonColumnsKeysArr));
     return _.merge(new Entity(), obj) as Entity;
   }
   static getAll() {
@@ -29,7 +24,8 @@ export class Entity extends Firedev.Base.Entity {
   //#endregion
 
   //#region constructor
-  private constructor(...args) { // @ts-ignore
+  private constructor(...args) {
+    // @ts-ignore
     super(...args);
   }
   //#endregion
@@ -46,17 +42,16 @@ export class Entity extends Firedev.Base.Entity {
   @Firedev.Orm.Column.Custom({
     type: 'varchar',
     length: 100,
-    default: defaultModelValues.description
+    default: defaultModelValues.description,
   })
   //#endregion
   description?: string;
   //#endregion
 
   //#region methods
-  clone(options?: { propsToOmit: (keyof Entity)[]; }): Entity {
+  clone(options?: { propsToOmit: (keyof Entity)[] }): Entity {
     const { propsToOmit } = options || { propsToOmit: EntityNonColumnsKeysArr };
     return _.merge(new Entity(), _.omit(this, propsToOmit));
   }
   //#endregion
-
 }

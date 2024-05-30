@@ -22,6 +22,5 @@ export class EntityComponent {
   ngOnInit() {
     EntityHelpers.helloWorldEntity();
   }
-
 }
 //#endregion

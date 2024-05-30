@@ -5,7 +5,7 @@ const host = 'http://localhost:4199';
 //#region @browser
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 //#endregion
 //#endregion
 
@@ -15,8 +15,10 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./app/main-routing-in-app/main-routing-in-app.container.module')
-      .then(m => m.MainRoutingInAppContainerModule),
+    loadChildren: () =>
+      import(
+        './app/main-routing-in-app/main-routing-in-app.container.module'
+      ).then(m => m.MainRoutingInAppContainerModule),
   },
 ];
 //#endregion
@@ -29,9 +31,7 @@ const routes: Routes = [
   templateUrl: './app.html',
 })
 export class MainComponent implements OnInit {
-  async ngOnInit() {
-
-  }
+  async ngOnInit() {}
 }
 //#endregion
 
@@ -42,14 +42,14 @@ export class MainComponent implements OnInit {
       useHash: true,
       preloadingStrategy: PreloadAllModules,
       enableTracing: false,
-      bindToComponentInputs: true
+      bindToComponentInputs: true,
     }),
   ],
   exports: [MainComponent],
   declarations: [MainComponent],
   providers: [],
 })
-export class MainModule { }
+export class MainModule {}
 //#endregion
 //#endregion
 
@@ -70,7 +70,7 @@ async function start() {
       type: 'better-sqlite3',
       database: 'tmp-db.sqlite',
       logging: false,
-    }
+    },
     //#endregion
   });
   //#region @backend

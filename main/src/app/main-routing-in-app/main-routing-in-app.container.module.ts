@@ -23,11 +23,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-  ],
+  imports: [CommonModule, RouterModule.forChild(routes)],
   declarations: [MainRoutingInAppContainer],
 })
-export class MainRoutingInAppContainerModule { }
+export class MainRoutingInAppContainerModule {}
 //#endregion
