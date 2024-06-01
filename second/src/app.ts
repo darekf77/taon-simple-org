@@ -1,5 +1,5 @@
 //#region @notForNpm
-import { Firedev } from 'firedev';
+import { Firedev } from 'firedev/src';
 import { Observable, map } from 'rxjs';
 
 import { HOST_BACKEND_PORT } from './app.hosts';
@@ -44,7 +44,9 @@ export class SecondModule {}
 
 @Firedev.Entity({ className: 'User' })
 class User extends Firedev.Base.Entity {
-  public static ctrl?: UserController;
+  public static ctrl?: UserController = Firedev.inject(
+    () => SecondContext.types.controllers.UserController,
+  );
   //#region @websql
   @Firedev.Orm.Column.Generated()
   //#endregion
@@ -53,38 +55,46 @@ class User extends Firedev.Base.Entity {
 
 @Firedev.Controller({ className: 'UserController' })
 class UserController extends Firedev.Base.CrudController<User> {
-  entity = () => User;
+  entity = () => SecondContext.types.entities.User;
   //#region @websql
   async initExampleDbData(): Promise<void> {
-    await this.repository.save(new User());
+    await this.repository.save(new SecondContext.types.entities.User());
   }
   //#endregion
 }
 
-async function start() {
-  console.log('hello world');
-  console.log('Your server will start on port ' + HOST_BACKEND_PORT);
-  const host = 'http://localhost:' + HOST_BACKEND_PORT;
+const host = 'http://localhost:' + HOST_BACKEND_PORT;
+console.log('host', host);
 
-  const context = await Firedev.createContext({
-    host,
-    contextName: 'context',
-    controllers: {
-      UserController,
-      // PUT FIREDEV CONTORLLERS HERE
-    },
-    entities: {
-      User,
-      // PUT FIREDEV ENTITIES HERE
-    },
-    //#region @websql
-    database: true,
-    //#endregion
-  });
-  await context.initialize();
+var SecondContext = Firedev.createContext({
+  host,
+  contextName: 'context',
+  contexts: {
+    BaseContext: Firedev.Base.Context,
+  },
+  controllers: {
+    UserController,
+    // PUT FIREDEV CONTORLLERS HERE
+  },
+  entities: {
+    User,
+    // PUT FIREDEV ENTITIES HERE
+  },
+  //#region @websql
+  database: true,
+  //#endregion
+});
+
+async function start() {
+  console.log('[second-app] hello world');
+  console.log('[second-app] Your server will start on port ' + HOST_BACKEND_PORT);
+
+  await SecondContext.initialize();
 
   if (Firedev.isBrowser) {
-    const users = (await User.ctrl.getAll().received).body.json;
+    const users = (
+      await SecondContext.types.entities.User.ctrl.getAll().received
+    ).body.json;
     console.log({
       'users from backend': users,
     });

@@ -65,13 +65,6 @@ async function start() {
     entities: [
       // PUT FIREDEV ENTITIES HERE
     ],
-    //#region @websql
-    config: {
-      type: 'better-sqlite3',
-      database: 'tmp-db.sqlite',
-      logging: false,
-    },
-    //#endregion
   });
   //#region @backend
   if (Firedev.isNode) {
