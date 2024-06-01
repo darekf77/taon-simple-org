@@ -29,7 +29,7 @@
     "smart": true
   },
   "name": "firedev-simple-org",
-  "version": "0.100.15",
+  "version": "0.100.16",
   "dependencies": {
     "@angular-builders/custom-webpack": "~16.0.2-beta.2",
     "@angular-devkit/build-angular": "~16.0.5",
@@ -326,6 +326,6 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {},
-  "lastBuildTagHash": "9e48a6b8a21d44a57beafe8c9eda2643519f1b5d",
+  "lastBuildTagHash": "9033fdcfe298fd2f2e2128df8bf4e0ee2ebc2cc4",
   "main": "dist/app.electron.js"
 }
