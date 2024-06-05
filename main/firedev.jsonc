@@ -20,6 +20,6 @@
     "cliBuildIncludeNodeModules": false,
   },
 
-  "version": "v4",
+  "version": "v16",
   "type": "isomorphic-lib",
 }
