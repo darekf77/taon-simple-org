@@ -20,7 +20,7 @@
     "cliBuildIncludeNodeModules": false,
     "cliBuildUglify": false,
   },
-  "version": "v4",
+  "version": "v16",
   "type": "container",
   "monorepo": true,
   "smart": true,
