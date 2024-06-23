@@ -55,10 +55,10 @@ class User extends Firedev.Base.Entity {
 
 @Firedev.Controller({ className: 'UserController' })
 class UserController extends Firedev.Base.CrudController<User> {
-  entity = () => SecondContext.types.entities.User;
+  entityClassResolveFn = () => SecondContext.types.entities.User;
   //#region @websql
   async initExampleDbData(): Promise<void> {
-    await this.repository.save(new SecondContext.types.entities.User());
+    await this.db.save(new SecondContext.types.entities.User());
   }
   //#endregion
 }
@@ -66,7 +66,7 @@ class UserController extends Firedev.Base.CrudController<User> {
 const host = 'http://localhost:' + HOST_BACKEND_PORT;
 console.log('host', host);
 
-var SecondContext = Firedev.createContext({
+var SecondContext = Firedev.createContext(()=>({
   host,
   contextName: 'context',
   contexts: {
@@ -83,7 +83,7 @@ var SecondContext = Firedev.createContext({
   //#region @websql
   database: true,
   //#endregion
-});
+}));
 
 async function start() {
   console.log('[second-app] hello world');

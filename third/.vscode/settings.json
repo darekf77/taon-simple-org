@@ -41,10 +41,6 @@
     ".npmignore": true,
     ".babelrc": true,
     ".npmrc": true,
-    ".eslintrc.json": true,
-    ".prettierignore": true,
-    ".prettierrc": true,
-    ".editorconfig": true,
     "devDependencies.json": true,
     "package.json": true,
     "logo.svg": true
