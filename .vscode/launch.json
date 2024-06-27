@@ -46,12 +46,33 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Debug/Start Server @firedev-simple-org/shared",
+      "cwd": "${workspaceFolder}/dist/firedev-simple-org/shared",
+      "program": "${workspaceFolder}/dist/firedev-simple-org/shared/run-org.js",
+      "args": [
+        "--child=shared",
+        "--port=4582"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register",
+        "--preserve-symlinks",
+        "--experimental-worker"
+      ],
+      "presentation": {
+        "group": "workspaceServers"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Debug/Start Server @firedev-simple-org/third",
       "cwd": "${workspaceFolder}/dist/firedev-simple-org/third",
       "program": "${workspaceFolder}/dist/firedev-simple-org/third/run-org.js",
       "args": [
         "--child=third",
-        "--port=4582"
+        "--port=4583"
       ],
       "runtimeArgs": [
         "--nolazy",
