@@ -1,41 +1,120 @@
-//#region @notForNpm
-import { Helpers } from 'tnp-core/src';
+//#region imports
+import { Firedev, BaseContext } from 'firedev';
+import { Observable, map } from 'rxjs';
+import { HOST_BACKEND_PORT } from './app.hosts';
 //#region @browser
-import { NgModule } from '@angular/core';
+import { NgModule, inject, Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-isomorphic-lib-v4',
-  template: 'hello from isomorphic-lib-v4',
-  styles: [
-    `
-      body {
-        margin: 0px !important;
-      }
-    `,
-  ],
-})
-export class IsomorphicLibV4Component implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
-
-@NgModule({
-  imports: [],
-  exports: [IsomorphicLibV4Component],
-  declarations: [IsomorphicLibV4Component],
-  providers: [],
-})
-export class IsomorphicLibV4Module {}
+import { CommonModule } from '@angular/common';
+//#endregion
 //#endregion
 
-async function start(port: number) {
-  await Helpers.wait(3);
-  console.log('hello world');
-  process.stdin.resume();
+console.log('hello world');
+console.log('Your server will start on port '+ HOST_BACKEND_PORT);
+const host = 'http://localhost:' + HOST_BACKEND_PORT;
+
+//#region third component
+//#region @browser
+@Component({
+  selector: 'app-third',
+  template: `hello from third<br>
+    <br>
+    users from backend
+    <ul>
+      <li *ngFor="let user of (users$ | async)"> {{ user | json }} </li>
+    </ul>
+  `,
+  styles: [` body { margin: 0px !important; } `],
+})
+export class ThirdComponent {
+  userApiService = inject(UserApiService);
+  readonly users$: Observable<User[]> = this.userApiService.getAll();
+}
+//#endregion
+//#endregion
+
+//#region  third api service
+//#region @browser
+@Injectable({
+  providedIn:'root'
+})
+export class UserApiService {
+  userControlller = Firedev.inject(()=> MainContext.get(UserController))
+  getAll() {
+    return this.userControlller.getAll()
+      .received
+      .observable
+      .pipe(map(r => r.body.json));
+  }
+}
+//#endregion
+//#endregion
+
+//#region  third module
+//#region @browser
+@NgModule({
+  exports: [ThirdComponent],
+  imports: [CommonModule],
+  declarations: [ThirdComponent],
+})
+export class ThirdModule { }
+//#endregion
+//#endregion
+
+//#region  third entity
+@Firedev.Entity({ className: 'User' })
+class User extends Firedev.Base.AbstractEntity {
+  public static ctrl?: UserController;
+  //#region @websql
+  @Firedev.Orm.Column.String()
+  //#endregion
+  name?: string;
+}
+//#endregion
+
+//#region  third controller
+@Firedev.Controller({ className: 'UserController' })
+class UserController extends Firedev.Base.CrudController<User> {
+  entityClassResolveFn = ()=> User;
+  //#region @websql
+  async initExampleDbData(): Promise<void> {
+    const superAdmin = new User();
+    superAdmin.name = 'super-admin';
+    await this.db.save(superAdmin);
+  }
+  //#endregion
+}
+//#endregion
+
+//#region  third context
+const MainContext = Firedev.createContext(()=>({
+  host,
+  contextName: 'MainContext',
+  contexts:{ BaseContext },
+  controllers: {
+    UserController,
+    // PUT FIREDEV CONTORLLERS HERE
+  },
+  entities: {
+    User,
+    // PUT FIREDEV ENTITIES HERE
+  },
+  database: true,
+  disabledRealtime: true,
+}));
+//#endregion
+
+async function start() {
+
+  await MainContext.initialize();
+
+  if (Firedev.isBrowser) {
+    const users = (await MainContext.getClassInstance(UserController).getAll().received)
+      .body?.json;
+    console.log({
+      'users from backend': users,
+    });
+  }
 }
 
 export default start;
-
-//#endregion

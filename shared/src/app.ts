@@ -1,15 +1,23 @@
-import { Firedev } from 'firedev';
+//#region imports
+import { Firedev, BaseContext } from 'firedev';
 import { Observable, map } from 'rxjs';
-//#region @notForNpm
 import { HOST_BACKEND_PORT } from './app.hosts';
 //#region @browser
-import { NgModule } from '@angular/core';
+import { NgModule, inject, Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//#endregion
+//#endregion
 
+console.log('hello world');
+console.log('Your server will start on port '+ HOST_BACKEND_PORT);
+const host = 'http://localhost:' + HOST_BACKEND_PORT;
+
+//#region shared component
+//#region @browser
 @Component({
-  selector: 'app-isomorphic-lib-v16',
-  template: `hello from isomorphic-lib-v16<br>
+  selector: 'app-shared',
+  template: `hello from shared<br>
     <br>
     users from backend
     <ul>
@@ -18,75 +26,95 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [` body { margin: 0px !important; } `],
 })
-export class IsomorphicLibV16Component implements OnInit {
-  users$: Observable<User[]> = User.ctrl.getAll().received.observable
-    .pipe(map(data => data.body.json));
-
-  constructor() { }
-  ngOnInit() { }
+export class SharedComponent {
+  userApiService = inject(UserApiService);
+  readonly users$: Observable<User[]> = this.userApiService.getAll();
 }
-
-@NgModule({
-  imports: [CommonModule],
-  exports: [IsomorphicLibV16Component],
-  declarations: [IsomorphicLibV16Component],
-  providers: [],
-})
-export class IsomorphicLibV16Module { }
+//#endregion
 //#endregion
 
+//#region  shared api service
+//#region @browser
+@Injectable({
+  providedIn:'root'
+})
+export class UserApiService {
+  userControlller = Firedev.inject(()=> MainContext.get(UserController))
+  getAll() {
+    return this.userControlller.getAll()
+      .received
+      .observable
+      .pipe(map(r => r.body.json));
+  }
+}
+//#endregion
+//#endregion
+
+//#region  shared module
+//#region @browser
+@NgModule({
+  exports: [SharedComponent],
+  imports: [CommonModule],
+  declarations: [SharedComponent],
+})
+export class SharedModule { }
+//#endregion
+//#endregion
+
+//#region  shared entity
 @Firedev.Entity({ className: 'User' })
-class User extends Firedev.Base.Entity {
+class User extends Firedev.Base.AbstractEntity {
   public static ctrl?: UserController;
   //#region @websql
-  @Firedev.Orm.Column.Generated()
+  @Firedev.Orm.Column.String()
   //#endregion
-  id?: string | number;
-
+  name?: string;
 }
+//#endregion
 
+//#region  shared controller
 @Firedev.Controller({ className: 'UserController' })
 class UserController extends Firedev.Base.CrudController<User> {
-  entity = ()=> User;
+  entityClassResolveFn = ()=> User;
   //#region @websql
   async initExampleDbData(): Promise<void> {
-    await this.repository.save(new User())
+    const superAdmin = new User();
+    superAdmin.name = 'super-admin';
+    await this.db.save(superAdmin);
   }
   //#endregion
 }
+//#endregion
+
+//#region  shared context
+const MainContext = Firedev.createContext(()=>({
+  host,
+  contextName: 'MainContext',
+  contexts:{ BaseContext },
+  controllers: {
+    UserController,
+    // PUT FIREDEV CONTORLLERS HERE
+  },
+  entities: {
+    User,
+    // PUT FIREDEV ENTITIES HERE
+  },
+  database: true,
+  disabledRealtime: true,
+}));
+//#endregion
 
 async function start() {
-  console.log('hello world');
-  console.log('Your server will start on port '+ HOST_BACKEND_PORT);
-  const host = 'http://localhost:' + HOST_BACKEND_PORT;
 
-  const context = await Firedev.createContext({
-    host,
-    contextName: 'context',
-    controllers: {
-      UserController,
-      // PUT FIREDEV CONTORLLERS HERE
-    },
-    entities: {
-      User,
-      // PUT FIREDEV ENTITIES HERE
-    },
-    //#region @websql
-    database:true,
-    //#endregion
-  });
-  await context.initialize();
+  await MainContext.initialize();
 
   if (Firedev.isBrowser) {
-    const users = (await User.ctrl.getAll().received).body.json;
+    const users = (await MainContext.getClassInstance(UserController).getAll().received)
+      .body?.json;
     console.log({
-      'users from backend': users
-    })
+      'users from backend': users,
+    });
   }
 }
 
 export default start;
-
-
-
-//#endregion

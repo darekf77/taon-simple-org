@@ -9,7 +9,7 @@
       "program": "${workspaceFolder}/dist/firedev-simple-org/main/run-org.js",
       "args": [
         "--child=main",
-        "--port=4682"
+        "--port=4680"
       ],
       "runtimeArgs": [
         "--nolazy",
@@ -30,7 +30,7 @@
       "program": "${workspaceFolder}/dist/firedev-simple-org/second/run-org.js",
       "args": [
         "--child=second",
-        "--port=4683"
+        "--port=4681"
       ],
       "runtimeArgs": [
         "--nolazy",
@@ -51,7 +51,7 @@
       "program": "${workspaceFolder}/dist/firedev-simple-org/shared/run-org.js",
       "args": [
         "--child=shared",
-        "--port=4684"
+        "--port=4682"
       ],
       "runtimeArgs": [
         "--nolazy",
@@ -72,7 +72,7 @@
       "program": "${workspaceFolder}/dist/firedev-simple-org/third/run-org.js",
       "args": [
         "--child=third",
-        "--port=4685"
+        "--port=4683"
       ],
       "runtimeArgs": [
         "--nolazy",

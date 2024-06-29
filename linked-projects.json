@@ -1,19 +1,19 @@
 {
-  "projects": [{
-    "relativeClonePath": "main",
-    "repoUrl": "https://github.com/darekf77/main.git",
-    "deafultBranch": "master"
-  }, {
-    "relativeClonePath": "second",
-    "repoUrl": "https://github.com/darekf77/second.git",
-    "deafultBranch": "master"
-  }, {
-    "repoUrl": "https://github.com/darekf77/third.git",
-    "deafultBranch": "master",
-    "relativeClonePath": "shared"
-  }, {
-    relativeClonePath: "third",
-    repoUrl: "https://github.com/darekf77/third.git",
-    deafultBranch: "master",
-  }]
+  "projects": [
+    {
+      "relativeClonePath": "main",
+      "repoUrl": "https://github.com/darekf77/main.git",
+      "deafultBranch": "master"
+    },
+    {
+      "relativeClonePath": "second",
+      "repoUrl": "https://github.com/darekf77/second.git",
+      "deafultBranch": "master"
+    },
+    {
+      "relativeClonePath": "third",
+      "repoUrl": "https://github.com/darekf77/third.git",
+      "deafultBranch": "master"
+    }
+  ]
 }
