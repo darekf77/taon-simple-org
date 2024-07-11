@@ -45,10 +45,6 @@ Thumbs.db
 /npm-debug.log*
 /.sass-cache
 /.sourcemaps
-/tsconfig.json
-/tsconfig.json.filetemplate
-/tsconfig.json.filetemplate
-/tsconfig.backend.dist.json
 # container/workspace git projects
 # PREFIX
 

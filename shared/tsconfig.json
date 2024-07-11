@@ -1,0 +1,39 @@
+{
+  "extends": "./tsconfig.isomorphic.json",
+  "compilerOptions": {
+    "strictNullChecks": false,
+    "rootDir": "../",
+    "paths": {
+      "@firedev-simple-org /main": [
+        "../main/src/lib"
+      ],
+      "@firedev-simple-org/main/*": [
+        "../main/src/lib/*"
+      ],
+      "@firedev-simple-org /second": [
+        "../second/src/lib"
+      ],
+      "@firedev-simple-org/second/*": [
+        "../second/src/lib/*"
+      ],
+      "@firedev-simple-org /shared": [
+        "../shared/src/lib"
+      ],
+      "@firedev-simple-org/shared/*": [
+        "../shared/src/lib/*"
+      ],
+      "@firedev-simple-org /third": [
+        "../third/src/lib"
+      ],
+      "@firedev-simple-org/third/*": [
+        "../third/src/lib/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/assets"
+  ]
+}
