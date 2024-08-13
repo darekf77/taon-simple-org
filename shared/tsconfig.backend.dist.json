@@ -4,28 +4,28 @@
     "rootDir": "./tmp-source-dist",
     "paths": {
       "@firedev-simple-org /main": [
-        "../main\\src\\lib"
+        "../main/tmp-source-dist/lib"
       ],
       "@firedev-simple-org/main/*": [
-        "../main\\src\\lib/*"
+        "../main/tmp-source-dist/lib/*"
       ],
       "@firedev-simple-org /second": [
-        "../second\\src\\lib"
+        "../second/tmp-source-dist/lib"
       ],
       "@firedev-simple-org/second/*": [
-        "../second\\src\\lib/*"
+        "../second/tmp-source-dist/lib/*"
       ],
       "@firedev-simple-org /shared": [
-        "../shared\\src\\lib"
+        "../shared/tmp-source-dist/lib"
       ],
       "@firedev-simple-org/shared/*": [
-        "../shared\\src\\lib/*"
+        "../shared/tmp-source-dist/lib/*"
       ],
       "@firedev-simple-org /third": [
-        "../third\\src\\lib"
+        "../third/tmp-source-dist/lib"
       ],
       "@firedev-simple-org/third/*": [
-        "../third\\src\\lib/*"
+        "../third/tmp-source-dist/lib/*"
       ]
     }
   },

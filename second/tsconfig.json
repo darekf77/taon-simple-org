@@ -5,28 +5,28 @@
     "rootDir": "../",
     "paths": {
       "@firedev-simple-org /main": [
-        "../main\\src\\lib"
+        "../main/src/lib"
       ],
       "@firedev-simple-org/main/*": [
-        "../main\\src\\lib/*"
+        "../main/src/lib/*"
       ],
       "@firedev-simple-org /second": [
-        "../second\\src\\lib"
+        "../second/src/lib"
       ],
       "@firedev-simple-org/second/*": [
-        "../second\\src\\lib/*"
+        "../second/src/lib/*"
       ],
       "@firedev-simple-org /shared": [
-        "../shared\\src\\lib"
+        "../shared/src/lib"
       ],
       "@firedev-simple-org/shared/*": [
-        "../shared\\src\\lib/*"
+        "../shared/src/lib/*"
       ],
       "@firedev-simple-org /third": [
-        "../third\\src\\lib"
+        "../third/src/lib"
       ],
       "@firedev-simple-org/third/*": [
-        "../third\\src\\lib/*"
+        "../third/src/lib/*"
       ]
     }
   },
