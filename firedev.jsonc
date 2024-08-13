@@ -1,15 +1,18 @@
 {
   "resources": [],
+
   "overrided": {
     "linkedFolders": [],
     "ignoreDepsPattern": ["*"],
     "includeAsDev": [],
     "includeOnly": [],
     "dependencies": {},
-    "npmFixes": [],
+    "npmFixes": []
   },
+
   "smartContainerBuildTarget": "main",
   "linkedRepos": [],
+
   "libReleaseOptions": {
     "nodts": false,
     "obscure": false,
@@ -18,10 +21,11 @@
     "cliBuildNoDts": false,
     "cliBuildObscure": false,
     "cliBuildIncludeNodeModules": false,
-    "cliBuildUglify": false,
+    "cliBuildUglify": false
   },
-  "version": "v16",
+
+  "version": "v18",
   "type": "container",
   "monorepo": true,
-  "smart": true,
+  "smart": true
 }
