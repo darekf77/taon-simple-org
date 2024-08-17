@@ -29,7 +29,7 @@
     "smart": true
   },
   "name": "firedev-simple-org",
-  "version": "18.0.1",
+  "version": "18.0.2",
   "dependencies": {
     "@angular-builders/custom-webpack": "~18.0.0",
     "@angular-devkit/build-angular": "~18.1.4",
