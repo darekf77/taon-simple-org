@@ -4,9 +4,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug/Start Server @firedev-simple-org/main",
-      "cwd": "${workspaceFolder}/dist/firedev-simple-org/main",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/main/run-org.js",
+      "name": "Debug/Start Server @taon-simple-org/main",
+      "cwd": "${workspaceFolder}/dist/taon-simple-org/main",
+      "program": "${workspaceFolder}/dist/taon-simple-org/main/run-org.js",
       "args": [
         "--child=main",
         "--port=4680"
@@ -25,9 +25,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug/Start Server @firedev-simple-org/second",
-      "cwd": "${workspaceFolder}/dist/firedev-simple-org/second",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/second/run-org.js",
+      "name": "Debug/Start Server @taon-simple-org/second",
+      "cwd": "${workspaceFolder}/dist/taon-simple-org/second",
+      "program": "${workspaceFolder}/dist/taon-simple-org/second/run-org.js",
       "args": [
         "--child=second",
         "--port=4681"
@@ -46,9 +46,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug/Start Server @firedev-simple-org/shared",
-      "cwd": "${workspaceFolder}/dist/firedev-simple-org/shared",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/shared/run-org.js",
+      "name": "Debug/Start Server @taon-simple-org/shared",
+      "cwd": "${workspaceFolder}/dist/taon-simple-org/shared",
+      "program": "${workspaceFolder}/dist/taon-simple-org/shared/run-org.js",
       "args": [
         "--child=shared",
         "--port=4682"
@@ -67,9 +67,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug/Start Server @firedev-simple-org/third",
-      "cwd": "${workspaceFolder}/dist/firedev-simple-org/third",
-      "program": "${workspaceFolder}/dist/firedev-simple-org/third/run-org.js",
+      "name": "Debug/Start Server @taon-simple-org/third",
+      "cwd": "${workspaceFolder}/dist/taon-simple-org/third",
+      "program": "${workspaceFolder}/dist/taon-simple-org/third/run-org.js",
       "args": [
         "--child=third",
         "--port=4683"

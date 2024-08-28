@@ -1,3 +1,3 @@
 export function helloStandaloenApp() {
-  console.log('hello from @firedev-simple-org/main PROJECT!');
+  console.log('hello from @taon-simple-org/main PROJECT!');
 }

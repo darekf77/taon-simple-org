@@ -3,9 +3,9 @@ var { config } = { config: {} }
 
 config = {
 
-  domain: 'firedev-simple.org',
+  domain: 'taon-simple.org',
   useDomain: false,
-  title: 'Firedev Simple Org',
+  title: 'Taon Simple Org',
   pwa: {
     // start_url: ''
   }

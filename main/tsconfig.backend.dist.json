@@ -3,28 +3,28 @@
   "compilerOptions": {
     "rootDir": "./tmp-source-dist",
     "paths": {
-      "@firedev-simple-org /main": [
+      "@taon-simple-org /main": [
         "../main/tmp-source-dist/lib"
       ],
-      "@firedev-simple-org/main/*": [
+      "@taon-simple-org/main/*": [
         "../main/tmp-source-dist/lib/*"
       ],
-      "@firedev-simple-org /second": [
+      "@taon-simple-org /second": [
         "../second/tmp-source-dist/lib"
       ],
-      "@firedev-simple-org/second/*": [
+      "@taon-simple-org/second/*": [
         "../second/tmp-source-dist/lib/*"
       ],
-      "@firedev-simple-org /shared": [
+      "@taon-simple-org /shared": [
         "../shared/tmp-source-dist/lib"
       ],
-      "@firedev-simple-org/shared/*": [
+      "@taon-simple-org/shared/*": [
         "../shared/tmp-source-dist/lib/*"
       ],
-      "@firedev-simple-org /third": [
+      "@taon-simple-org /third": [
         "../third/tmp-source-dist/lib"
       ],
-      "@firedev-simple-org/third/*": [
+      "@taon-simple-org/third/*": [
         "../third/tmp-source-dist/lib/*"
       ]
     }

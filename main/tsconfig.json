@@ -4,28 +4,28 @@
     "strictNullChecks": false,
     "rootDir": "../",
     "paths": {
-      "@firedev-simple-org /main": [
+      "@taon-simple-org /main": [
         "../main/src/lib"
       ],
-      "@firedev-simple-org/main/*": [
+      "@taon-simple-org/main/*": [
         "../main/src/lib/*"
       ],
-      "@firedev-simple-org /second": [
+      "@taon-simple-org /second": [
         "../second/src/lib"
       ],
-      "@firedev-simple-org/second/*": [
+      "@taon-simple-org/second/*": [
         "../second/src/lib/*"
       ],
-      "@firedev-simple-org /shared": [
+      "@taon-simple-org /shared": [
         "../shared/src/lib"
       ],
-      "@firedev-simple-org/shared/*": [
+      "@taon-simple-org/shared/*": [
         "../shared/src/lib/*"
       ],
-      "@firedev-simple-org /third": [
+      "@taon-simple-org /third": [
         "../third/src/lib"
       ],
-      "@firedev-simple-org/third/*": [
+      "@taon-simple-org/third/*": [
         "../third/src/lib/*"
       ]
     }

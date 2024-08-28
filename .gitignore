@@ -53,8 +53,7 @@ Thumbs.db
 
 
 # =====================
-!firedev.json
-!firedev.jsonc
+!taon.jsonc
 *.filetemplate
 
 /angular.json

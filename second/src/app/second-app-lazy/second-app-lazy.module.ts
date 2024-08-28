@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SecondAppLazyComponent } from './second-app-lazy.component';
-import type { MyMainLibCmpComponent } from '@firedev-simple-org/main/src';
+import type { MyMainLibCmpComponent } from '@taon-simple-org/main/src';
 
 const routes: Routes = [
   {
