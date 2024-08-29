@@ -5,28 +5,28 @@
     "rootDir": "../",
     "paths": {
       "@taon-simple-org /main": [
-        "../main/src/lib"
+        "../main\\src\\lib"
       ],
       "@taon-simple-org/main/*": [
-        "../main/src/lib/*"
+        "../main\\src\\lib/*"
       ],
       "@taon-simple-org /second": [
-        "../second/src/lib"
+        "../second\\src\\lib"
       ],
       "@taon-simple-org/second/*": [
-        "../second/src/lib/*"
+        "../second\\src\\lib/*"
       ],
       "@taon-simple-org /shared": [
-        "../shared/src/lib"
+        "../shared\\src\\lib"
       ],
       "@taon-simple-org/shared/*": [
-        "../shared/src/lib/*"
+        "../shared\\src\\lib/*"
       ],
       "@taon-simple-org /third": [
-        "../third/src/lib"
+        "../third\\src\\lib"
       ],
       "@taon-simple-org/third/*": [
-        "../third/src/lib/*"
+        "../third\\src\\lib/*"
       ]
     }
   },
