@@ -29,7 +29,7 @@
     "smart": true
   },
   "name": "taon-simple-org",
-  "version": "18.0.6",
+  "version": "18.0.7",
   "dependencies": {
     "@angular-builders/custom-webpack": "~18.0.0",
     "@angular-devkit/build-angular": "~18.1.4",
