@@ -9,7 +9,7 @@
       "program": "${workspaceFolder}/dist/taon-simple-org/main/run-org.js",
       "args": [
         "--child=main",
-        "--port=4680"
+        "--port=4683"
       ],
       "runtimeArgs": [
         "--nolazy",
@@ -30,7 +30,7 @@
       "program": "${workspaceFolder}/dist/taon-simple-org/second/run-org.js",
       "args": [
         "--child=second",
-        "--port=4681"
+        "--port=4684"
       ],
       "runtimeArgs": [
         "--nolazy",
@@ -51,7 +51,7 @@
       "program": "${workspaceFolder}/dist/taon-simple-org/shared/run-org.js",
       "args": [
         "--child=shared",
-        "--port=4682"
+        "--port=4685"
       ],
       "runtimeArgs": [
         "--nolazy",
@@ -72,7 +72,7 @@
       "program": "${workspaceFolder}/dist/taon-simple-org/third/run-org.js",
       "args": [
         "--child=third",
-        "--port=4683"
+        "--port=4686"
       ],
       "runtimeArgs": [
         "--nolazy",

@@ -6,9 +6,7 @@
     "**/node_modules": true,
     "**/tmp*": true,
     "**/dist*": true,
-    "**/bundle*": true,
     "**/browser": true,
-    "**/browser*": true,
     "**/websql": true,
     "**/websql*": true,
     "**/module*": true,
@@ -63,24 +61,20 @@
     "**/karma.conf.js": true,
     "**/docs-config.schema.json": true
   },
-
   "workbench.colorCustomizations": {
     "activityBar.background": "#0084ff",
     "activityBar.foreground": "#000000"
   },
-
   "editor.rulers": [
     100,
     120
   ],
-
   "html.format.wrapAttributes": "force-aligned",
   "workbench.colorTheme": "Default Light+",
   "tslint.autoFixOnSave": true,
   "eslint.enable": false,
   "tslint.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-
   "search.exclude": {
     "docs": true,
     "bin": true,
@@ -108,16 +102,17 @@
     "**/.tnp": true,
     "projects": true
   },
-
   "window.title": "taon-dev/taon-simple-org/third (@taon-simple-org/third) [ ${activeEditorShort} ]",
   "search.useIgnoreFiles": false,
-
   "search.include": [
     "**/src/**"
   ],
-
-  "json.schemas": [{
-    "fileMatch": ["/docs-config.jsonc"],
-    "url": "./docs-config.schema.json"
-  }]
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/docs-config.jsonc"
+      ],
+      "url": "./docs-config.schema.json"
+    }
+  ]
 }
