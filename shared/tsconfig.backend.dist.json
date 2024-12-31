@@ -4,28 +4,28 @@
     "rootDir": "./tmp-source-dist",
     "paths": {
       "@taon-simple-org /main": [
-        "../main\\src\\lib"
+        "../main/tmp-source-dist/lib"
       ],
       "@taon-simple-org/main/*": [
-        "../main\\src\\lib/*"
+        "../main/tmp-source-dist/lib/*"
       ],
       "@taon-simple-org /second": [
-        "../second\\src\\lib"
+        "../second/tmp-source-dist/lib"
       ],
       "@taon-simple-org/second/*": [
-        "../second\\src\\lib/*"
+        "../second/tmp-source-dist/lib/*"
       ],
       "@taon-simple-org /shared": [
-        "../shared\\src\\lib"
+        "../shared/tmp-source-dist/lib"
       ],
       "@taon-simple-org/shared/*": [
-        "../shared\\src\\lib/*"
+        "../shared/tmp-source-dist/lib/*"
       ],
       "@taon-simple-org /third": [
-        "../third\\src\\lib"
+        "../third/tmp-source-dist/lib"
       ],
       "@taon-simple-org/third/*": [
-        "../third\\src\\lib/*"
+        "../third/tmp-source-dist/lib/*"
       ]
     }
   },

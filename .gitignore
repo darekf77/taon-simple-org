@@ -63,3 +63,4 @@ Thumbs.db
 /angular.json
 
 /.vscode/launch.json
+/*.sqlite
