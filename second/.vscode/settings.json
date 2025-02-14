@@ -44,12 +44,13 @@
   "search.include": [
     "**/src/**"
   ],
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "/docs-config.jsonc"
-      ],
-      "url": "./docs-config.schema.json"
-    }
-  ]
+  "json.schemas": [{
+    "fileMatch": [
+      "/docs-config.jsonc"
+    ],
+    "url": "./docs-config.schema.json"
+  }, {
+    "fileMatch": ["/taon.jsonc"],
+    "url": "./taon-config.schema.json"
+  }]
 }
