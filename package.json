@@ -26,7 +26,8 @@
     "version": "v18",
     "type": "container",
     "monorepo": true,
-    "smart": true
+    "smart": true,
+    "packageJsonOverride": {}
   },
   "name": "taon-simple-org",
   "version": "18.0.25",
