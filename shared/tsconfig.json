@@ -2,31 +2,13 @@
   "extends": "./tsconfig.isomorphic.json",
   "compilerOptions": {
     "strictNullChecks": false,
-    "rootDir": "../",
+    "rootDir": "./src",
     "paths": {
-      "@taon-simple-org /main": [
-        "../main/src/lib"
+      "shared": [
+        "./src/lib"
       ],
-      "@taon-simple-org/main/*": [
-        "../main/src/lib/*"
-      ],
-      "@taon-simple-org /second": [
-        "../second/src/lib"
-      ],
-      "@taon-simple-org/second/*": [
-        "../second/src/lib/*"
-      ],
-      "@taon-simple-org /shared": [
-        "../shared/src/lib"
-      ],
-      "@taon-simple-org/shared/*": [
-        "../shared/src/lib/*"
-      ],
-      "@taon-simple-org /third": [
-        "../third/src/lib"
-      ],
-      "@taon-simple-org/third/*": [
-        "../third/src/lib/*"
+      "shared/*": [
+        "./src/lib/*"
       ]
     }
   },

@@ -1,33 +1,7 @@
 {
   "extends": "./tsconfig.isomorphic.json",
   "compilerOptions": {
-    "rootDir": "./tmp-source-dist",
-    "paths": {
-      "@taon-simple-org /main": [
-        "../main/tmp-source-dist/lib"
-      ],
-      "@taon-simple-org/main/*": [
-        "../main/tmp-source-dist/lib/*"
-      ],
-      "@taon-simple-org /second": [
-        "../second/tmp-source-dist/lib"
-      ],
-      "@taon-simple-org/second/*": [
-        "../second/tmp-source-dist/lib/*"
-      ],
-      "@taon-simple-org /shared": [
-        "../shared/tmp-source-dist/lib"
-      ],
-      "@taon-simple-org/shared/*": [
-        "../shared/tmp-source-dist/lib/*"
-      ],
-      "@taon-simple-org /third": [
-        "../third/tmp-source-dist/lib"
-      ],
-      "@taon-simple-org/third/*": [
-        "../third/tmp-source-dist/lib/*"
-      ]
-    }
+    "rootDir": "./tmp-source-dist"
   },
   "include": [
     "tmp-source-dist/**/*"
