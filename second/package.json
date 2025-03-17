@@ -1,4 +1,13 @@
 {
+  "tnp": {
+    "resources": [],
+    "type": "isomorphic-lib",
+    "version": "v18",
+    "dependenciesNamesForNpmLib": [],
+    "packageJsonOverride": {
+      "author": "Dariusz Filipiak"
+    }
+  },
   "name": "second",
   "version": "0.0.0",
   "author": "Dariusz Filipiak",
