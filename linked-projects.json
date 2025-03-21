@@ -3,17 +3,20 @@
     {
       "relativeClonePath": "main",
       "repoUrl": "https://github.com/darekf77/main.git",
-      "defaultBranch": "master"
+      "defaultBranch": "master",
+      "deafultBranch": "master"
     },
     {
       "relativeClonePath": "second",
       "repoUrl": "https://github.com/darekf77/second.git",
-      "defaultBranch": "master"
+      "defaultBranch": "master",
+      "deafultBranch": "master"
     },
     {
       "relativeClonePath": "third",
       "repoUrl": "https://github.com/darekf77/third.git",
-      "defaultBranch": "master"
+      "defaultBranch": "master",
+      "deafultBranch": "master"
     }
   ]
 }
