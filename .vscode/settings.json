@@ -57,15 +57,12 @@
     "**/npm-debug.log*": true,
     "**/.sass-cache": true,
     "**/.sourcemaps": true,
-    "**/tsconfig.json": true,
-    "**/tsconfig.json.filetemplate": true,
     "**/projects/tmp*": true,
     "**/tsconfig.backend.dist.json": true,
     "**/.gitignore": true,
     "**/.npmignore": true,
     "**/.babelrc": true,
     "**/.npmrc": true,
-    "**/.eslintrc.json": true,
     "**/.prettierignore": true,
     "**/.prettierrc": true,
     "**/.editorconfig": true,
@@ -84,7 +81,8 @@
     "**/protractor.conf.js": true,
     "**/karma.conf.js": true,
     "**/docs-config.schema.json": true,
-    "**/taon-config.schema.json": true,
+    "**/taon-config-standalone.schema.json": true,
+    "**/taon-config-container.schema.json": true,
     "**/index.js": true,
     "**/index.d.ts": true,
     "**/index.js.map": true,
@@ -133,18 +131,17 @@
   },
   "prettier.endOfLine": "auto",
   "prettier.prettierPath": "./node_modules/prettier",
-  "window.title": "npm/taon-dev/taon-simple-org (@taon-dev) [ ${activeEditorShort} ]",
+  "window.title": "npm/taon-dev/taon-simple-org  [ ${activeEditorShort} ]",
   "search.useIgnoreFiles": false,
   "search.include": [
     "**/src/**"
   ],
-  "json.schemas": [{
-    "fileMatch": [
-      "/docs-config.jsonc"
-    ],
-    "url": "./docs-config.schema.json"
-  }, {
-    "fileMatch": ["/taon.jsonc"],
-    "url": "./taon-config.schema.json"
-  }]
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/taon.jsonc"
+      ],
+      "url": "./taon-config-container.schema.json"
+    }
+  ]
 }

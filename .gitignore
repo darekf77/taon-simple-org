@@ -17,11 +17,8 @@ app.hosts.ts
 /.taon
 /.tnp
 /docs-config.schema.json
-/taon-config.schema.json
 /**/*._auto-generated_.ts
 /**/BUILD-INFO.md
-/linked-repos
-
 
 /src/lib/lib-info.md
 /src/migrations/migrations-info.md
@@ -31,8 +28,6 @@ app.hosts.ts
 # System Files
 .DS_Store
 Thumbs.db
-
-
 /node_modules
 /tmp*
 /dist*
@@ -64,9 +59,5 @@ Thumbs.db
 # =====================
 !taon.jsonc
 *.filetemplate
-
-/angular.json
-
-/.vscode/launch.json
 /*.sqlite
 /*.rest
