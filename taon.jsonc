@@ -1,6 +1,6 @@
 {
   "type": "container",
-  "version": "v18",
+  "version": "v19",
   "dependenciesNamesForNpmLib": [],
 
   "autoReleaseConfigAllowedItems": [{
