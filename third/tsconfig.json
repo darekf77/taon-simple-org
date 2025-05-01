@@ -4,23 +4,13 @@
     "strictNullChecks": false,
     "rootDir": "./",
     "paths": {
-      "@taon-simple-org/third/src": [
-        "./src/lib"
-      ],
-      "@taon-simple-org/third/src/*": [
-        "./src/lib/*"
-      ]
+      "@taon-simple-org/third/src": ["./src/lib"],
+      "@taon-simple-org/third/src/*": ["./src/lib/*"]
     },
     "module": "CommonJS",
     "moduleResolution": "Node",
     "esModuleInterop": true
   },
-  "include": [
-    "src/**/*",
-    "environments/**/*.ts",
-    "env.ts"
-  ],
-  "exclude": [
-    "src/assets"
-  ]
+  "include": ["src/**/*", "environments/**/*.ts", "env.ts"],
+  "exclude": ["src/assets"]
 }

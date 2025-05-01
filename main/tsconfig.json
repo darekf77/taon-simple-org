@@ -4,10 +4,10 @@
     "strictNullChecks": false,
     "rootDir": "./",
     "paths": {
-      "@taon-simple-org/main/src": [
+      "@taon-simple-org/main-preview/src": [
         "./src/lib"
       ],
-      "@taon-simple-org/main/src/*": [
+      "@taon-simple-org/main-preview/src/*": [
         "./src/lib/*"
       ]
     },

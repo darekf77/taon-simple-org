@@ -1,30 +1,35 @@
 //#region imports
-import { Taon, BaseContext } from 'taon';
-import { Observable, map } from 'rxjs';
-import { HOST_BACKEND_PORT } from './app.hosts';
-//#region @browser
+import { CommonModule } from '@angular/common';
 import { NgModule, inject, Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-//#endregion
-//#endregion
+import { Observable, map } from 'rxjs';
+import { Taon, BaseContext } from 'taon/src';
 
+import { HOST_BACKEND_PORT } from './app.hosts';
+//#region @browser
+//#endregion
+//#endregion
 console.log('hello world');
-console.log('Your server will start on port '+ HOST_BACKEND_PORT);
+console.log('Your server will start on port ' + HOST_BACKEND_PORT);
 const host = 'http://localhost:' + HOST_BACKEND_PORT;
-
 //#region third component
 //#region @browser
 @Component({
   selector: 'app-third',
-  template: `hello from third<br>
-    <br>
+  template: `hello from third<br />
+    <br />
     users from backend
     <ul>
-      <li *ngFor="let user of (users$ | async)"> {{ user | json }} </li>
-    </ul>
-  `,
-  styles: [` body { margin: 0px !important; } `],
+      <li *ngFor="let user of users$ | async">{{ user | json }}</li>
+    </ul> `,
+  styles: [
+    `
+      body {
+        margin: 0px !important;
+      }
+    `,
+  ],
+  standalone: false,
 })
 export class ThirdComponent {
   userApiService = inject(UserApiService);
@@ -32,24 +37,21 @@ export class ThirdComponent {
 }
 //#endregion
 //#endregion
-
 //#region  third api service
 //#region @browser
 @Injectable({
-  providedIn:'root'
+  providedIn: 'root',
 })
 export class UserApiService {
-  userControlller = Taon.inject(()=> MainContext.get(UserController))
+  userControlller = Taon.inject(() => MainContext.get(UserController));
   getAll() {
-    return this.userControlller.getAll()
-      .received
-      .observable
-      .pipe(map(r => r.body.json));
+    return this.userControlller
+      .getAll()
+      .received.observable.pipe(map(r => r.body.json));
   }
 }
 //#endregion
 //#endregion
-
 //#region  third module
 //#region @browser
 @NgModule({
@@ -57,10 +59,9 @@ export class UserApiService {
   imports: [CommonModule],
   declarations: [ThirdComponent],
 })
-export class ThirdModule { }
+export class ThirdModule {}
 //#endregion
 //#endregion
-
 //#region  third entity
 @Taon.Entity({ className: 'User' })
 class User extends Taon.Base.AbstractEntity {
@@ -71,26 +72,23 @@ class User extends Taon.Base.AbstractEntity {
   name?: string;
 }
 //#endregion
-
 //#region  third controller
 @Taon.Controller({ className: 'UserController' })
 class UserController extends Taon.Base.CrudController<User> {
-  entityClassResolveFn = ()=> User;
+  entityClassResolveFn = () => User;
   //#region @websql
   async initExampleDbData(): Promise<void> {
     const superAdmin = new User();
     superAdmin.name = 'super-admin';
     await this.db.save(superAdmin);
   }
-  //#endregion
 }
 //#endregion
-
 //#region  third context
-const MainContext = Taon.createContext(()=>({
+const MainContext = Taon.createContext(() => ({
   host,
   contextName: 'MainContext',
-  contexts:{ BaseContext },
+  contexts: { BaseContext },
   controllers: {
     UserController,
     // PUT FIREDEV CONTORLLERS HERE
@@ -103,18 +101,15 @@ const MainContext = Taon.createContext(()=>({
   disabledRealtime: true,
 }));
 //#endregion
-
 async function start() {
-
   await MainContext.initialize();
-
   if (Taon.isBrowser) {
-    const users = (await MainContext.getClassInstance(UserController).getAll().received)
-      .body?.json;
+    const users = (
+      await MainContext.getClassInstance(UserController).getAll().received
+    ).body?.json;
     console.log({
       'users from backend': users,
     });
   }
 }
-
 export default start;

@@ -2,6 +2,7 @@
   "type": "isomorphic-lib",
   "version": "v19",
   "dependenciesNamesForNpmLib": [],
+  "overrideNameWhenInsideOrganization": "main-preview",
   "resources": [],
   "packageJsonOverride": {
     "author": "Dariusz Filipiak"
