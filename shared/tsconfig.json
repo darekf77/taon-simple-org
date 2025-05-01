@@ -2,18 +2,23 @@
   "extends": "./tsconfig.isomorphic.json",
   "compilerOptions": {
     "strictNullChecks": false,
-    "rootDir": "./src",
+    "rootDir": "./",
     "paths": {
-      "shared": [
+      "@taon-simple-org/shared/src": [
         "./src/lib"
       ],
-      "shared/*": [
+      "@taon-simple-org/shared/src/*": [
         "./src/lib/*"
       ]
-    }
+    },
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "esModuleInterop": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "environments/**/*.ts",
+    "env.ts"
   ],
   "exclude": [
     "src/assets"

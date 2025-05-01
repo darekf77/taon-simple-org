@@ -1,16 +1,10 @@
 {
   "type": "container",
-  "version": "v18",
-  "dependenciesNamesForNpmLib": [],
-
-  "autoReleaseConfigAllowedItems": [{
-    "artifactName": "npm-lib-and-cli-tool"
-  }],
+  "version": "v19",
 
   "monorepo": true,
+  "organization": true,
   "resources": [],
-  "smart": true,
-  "smartContainerBuildTarget": "main",
 
   "packageJsonOverride": {
     "author": "Dariusz Filipiak"

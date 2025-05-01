@@ -17,13 +17,13 @@ app.hosts.ts
 /.taon
 /.tnp
 /docs-config.schema.json
-/**/*._auto-generated_.ts
 /**/BUILD-INFO.md
 
 /src/lib/lib-info.md
 /src/migrations/migrations-info.md
 /src/tests/mocha-tests-info.md
 /src/assets/shared/shared_folder_info.txt
+.vscode/launch.json
 
 # System Files
 .DS_Store
@@ -46,6 +46,8 @@ Thumbs.db
 /npm-debug.log*
 /.sass-cache
 /.sourcemaps
+/taon-config-container.schema.json
+/taon-config-container.schema.json
 /projects/tmp*
 !tsconfig*
 !webpack.*
