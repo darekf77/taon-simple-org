@@ -13,6 +13,7 @@ yarn-error.log
 testem.log
 /typings
 app.hosts.ts
+/src/vars.scss
 /.firedev
 /.taon
 /.tnp
@@ -46,8 +47,6 @@ Thumbs.db
 /npm-debug.log*
 /.sass-cache
 /.sourcemaps
-/taon-config-container.schema.json
-/taon-config-container.schema.json
 /projects/tmp*
 !tsconfig*
 !webpack.*

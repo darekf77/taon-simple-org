@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "#/definitions/Models.TaonJsonStandalone",
+  "$ref": "#/definitions/Models.TaonJsonContainer",
   "definitions": {
-    "Models.TaonJsonStandalone": {
+    "Models.TaonJsonContainer": {
       "type": "object",
       "properties": {
         "version": {
@@ -5303,77 +5303,33 @@
           "additionalProperties": false,
           "deprecated": true
         },
-        "overrideNpmName": {
-          "type": "string",
-          "description": "override npm name for build/relese"
-        },
-        "overrideNameWhenInsideOrganization": {
-          "type": "string",
-          "description": "it override name of project when is inside container that is organization.\n\nProperty \"overrideNpmName\" can override this name."
-        },
-        "overrideNameForCli": {
-          "type": "string",
-          "description": "override name of cli tool created from project"
-        },
         "type": {
           "type": "string",
-          "const": "isomorphic-lib"
+          "const": "container"
         },
         "resources": {
           "type": "array",
           "items": {
             "type": "string"
           },
-          "description": "Static resurces for standalone project, that are going to be included in release dist"
+          "description": "Static resurces for site project, that are going to be included in release dist"
         },
-        "dependenciesNamesForNpmLib": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "At beginning after node_modules installation taon is checking is packages are installed - if not it will throw error. Also.. this dependencies are going to be included in released npm lib as dependencies."
-        },
-        "peerDependenciesNamesForNpmLib": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "At beginning after node_modules installation taon is checking is packages are installed - if not it will throw error. Also.. this peerDependencies are going to be included in released npm lib as peerDependencies."
-        },
-        "additionalNpmNames": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "so I can release same npm lib with different name",
-          "deprecated": "does not make sense"
-        },
-        "isUsingOwnNodeModulesInsteadCoreContainer": {
+        "monorepo": {
           "type": "boolean",
-          "description": "Project is using own node_modules instead of core container"
+          "description": "Project is monorepo"
         },
-        "usesItsOwnNodeModules": {
+        "organization": {
           "type": "boolean",
-          "deprecated": "use isUsingOwnNodeModulesInsteadCoreContainer"
+          "description": "Project is organization/scope (like"
         },
-        "shouldGenerateAutogenIndexFile": {
-          "type": "boolean",
-          "description": "generate src/lib/index._auto-generated_.ts with all exports from lib ts files"
-        },
-        "autoReleaseConfigAllowedItems": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Models.TaonAutoReleaseItem"
-          },
-          "description": "Auto release helps with releasing multiple projects from a local machine. This is useful when we don't have Taon Cloud set up and want to release all projects with a single command."
+        "microFrontendMainProjectName": {
+          "type": "string",
+          "description": "Container projects can be used as micro frontends with router:  <site-path>/  (microFrontendMainProjectName)  <site-path>/_/other-project-name"
         }
       },
       "required": [
-        "dependenciesNamesForNpmLib",
         "isCoreProject",
         "packageJsonOverride",
-        "peerDependenciesNamesForNpmLib",
-        "shouldGenerateAutogenIndexFile",
         "type"
       ],
       "additionalProperties": false
@@ -6257,67 +6213,6 @@
       },
       "additionalProperties": false,
       "description": "An alternative configuration for workspaces."
-    },
-    "Models.TaonAutoReleaseItem": {
-      "type": "object",
-      "properties": {
-        "artifactName": {
-          "type": "string",
-          "enum": [
-            "npm-lib-and-cli-tool",
-            "angular-node-app",
-            "electron-app",
-            "mobile-app",
-            "vscode-plugin",
-            "docs-webapp"
-          ]
-        },
-        "envName": {
-          "type": "string",
-          "enum": [
-            "localhost",
-            "dev",
-            "stage",
-            "prod",
-            "test",
-            "qa",
-            "sandbox",
-            "uat",
-            "preprod",
-            "demo",
-            "docs",
-            "static-pages",
-            "ci",
-            "training"
-          ],
-          "description": "if not proviede default  env.<artifact-name>.__.ts will be in use"
-        },
-        "envNumber": {
-          "type": "number",
-          "description": "example for dev environtment > undefined - env.<artifact-name>.dev.ts > 1 - env.<artifact-name>.dev1.ts > 2 - env.<artifact-name>.dev2.ts ..."
-        },
-        "skip": {
-          "type": "boolean",
-          "description": "skip release of this artifact"
-        },
-        "releaseType": {
-          "$ref": "#/definitions/ReleaseType",
-          "description": "select release type for automatic release"
-        }
-      },
-      "required": [
-        "artifactName"
-      ],
-      "additionalProperties": false
-    },
-    "ReleaseType": {
-      "type": "string",
-      "enum": [
-        "manual",
-        "local",
-        "cloud",
-        "static-pages"
-      ]
     }
   }
 }
