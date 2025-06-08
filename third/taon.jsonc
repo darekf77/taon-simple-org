@@ -4,5 +4,6 @@
   "resources": [],
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
+    "description": "Description for third. Hello world!"
   },
 }

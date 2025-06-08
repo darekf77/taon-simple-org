@@ -4,6 +4,7 @@
   "dependenciesNamesForNpmLib": [],
   "resources": [],
   "packageJsonOverride": {
-    "author": "Dariusz Filipiak"
+    "author": "Dariusz Filipiak",
+    "description": "Description for second. Hello world!"
   }
 }

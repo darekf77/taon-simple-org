@@ -5,6 +5,7 @@
   "overrideNameWhenInsideOrganization": "main-preview",
   "resources": [],
   "packageJsonOverride": {
-    "author": "Dariusz Filipiak"
+    "author": "Dariusz Filipiak",
+    "description": "Description for main. Hello world!"
   }
 }
