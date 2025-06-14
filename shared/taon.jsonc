@@ -5,7 +5,7 @@
 
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
-    "private": true,
-    "description": "Description for shared. Hello world!"
+    "description": "Description for shared. Hello world!",
+    "private": true
   }
 }

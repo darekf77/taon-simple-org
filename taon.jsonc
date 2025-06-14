@@ -8,7 +8,7 @@
 
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
-    "scripts": {},
-    "description": "Description for taon-simple-org. Hello world!"
+    "description": "Description for taon-simple-org. Hello world!",
+    "scripts": {}
   }
 }
