@@ -44,7 +44,9 @@
     "dist-*": true,
     "src/lib/env/**/*.*": true,
     "**/dist-*": true,
-    "**/src/lib/env/**/*.*": true
+    "**/src/lib/env/**/*.*": true,
+    "*.rest": true,
+    "**/*.rest": true
   },
 
   "files.exclude": {
