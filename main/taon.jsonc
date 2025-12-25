@@ -2,10 +2,13 @@
   "type": "isomorphic-lib",
   "version": "v21",
   "dependenciesNamesForNpmLib": [],
+  "appId": "com.domain.example.taon-simple-org.main-preview",
   "overrideNameWhenInsideOrganization": "main-preview",
   "resources": [],
+
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
-    "description": "Description for main. Hello world!"
+    "description": "Description for main. Hello world!",
+    "scripts": {}
   }
 }

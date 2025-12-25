@@ -1,9 +1,12 @@
 {
   "type": "isomorphic-lib",
   "version": "v21",
+  "appId": "com.domain.example.taon-simple-org.third",
   "resources": [],
+
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
-    "description": "Description for third. Hello world!"
-  },
+    "description": "Description for third. Hello world!",
+    "scripts": {}
+  }
 }

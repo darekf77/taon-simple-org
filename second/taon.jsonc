@@ -2,9 +2,12 @@
   "type": "isomorphic-lib",
   "version": "v21",
   "dependenciesNamesForNpmLib": [],
+  "appId": "com.domain.example.taon-simple-org.second",
   "resources": [],
+
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
-    "description": "Description for second. Hello world!"
+    "description": "Description for second. Hello world!",
+    "scripts": {}
   }
 }

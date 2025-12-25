@@ -1,20 +1,28 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "lib": [
+      "es2022",
+      "dom"
+    ],
     "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": "./tmp-src",
     "skipLibCheck": true,
     "sourceMap": true,
     "target": "es2022",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2022", "dom"],
-    "types": ["node"],
-    "rootDir": "./tmp-src",
-    "outDir": "dist"
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ]
   },
-  "include": ["tmp-src/**/*"],
   "exclude": [
     "preview",
     "projects",
@@ -30,5 +38,8 @@
     "src/**/*.spec.ts",
     "tmp-site-src",
     "tmp-tests-context"
+  ],
+  "include": [
+    "tmp-src/**/*"
   ]
 }

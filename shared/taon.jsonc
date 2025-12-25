@@ -1,11 +1,13 @@
 {
   "type": "isomorphic-lib",
   "version": "v21",
+  "appId": "com.domain.example.taon-simple-org.shared",
   "resources": [],
 
   "packageJsonOverride": {
     "author": "Dariusz Filipiak",
     "description": "Description for shared. Hello world!",
-    "private": true
+    "private": true,
+    "scripts": {}
   }
 }
