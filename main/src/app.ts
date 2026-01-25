@@ -19,7 +19,7 @@ const host = 'http://localhost:' + HOST_BACKEND_PORT;
 @Component({
   selector: 'app-main',
   template: `hello from main<br />
-  <logo-with-asset />
+    <logo-with-asset />
     <br />
     users from backend
     <ul>
