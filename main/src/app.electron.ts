@@ -1,20 +1,14 @@
-import {
-  CLIENT_DEV_NORMAL_APP_PORT,
-  CLIENT_DEV_WEBSQL_APP_PORT,
-} from './app.hosts';
-import {
-  path,
-  //#region @backend
-  fse,
-  //#endregion
-} from 'tnp-core/src';
-//#region @backend
+//#region @notForNpm
 import { app, BrowserWindow, screen } from 'electron';
+import { path, fse } from 'tnp-core/src';
+
+import start from './app';
+import { FRONTEND_HOST_URL_ELECTRON } from './app.hosts';
+import { ENV_ELECTRON_APP_BUILD_ELECTRON_SHOW_DEV_TOOLS } from './lib/env';
 
 let win: BrowserWindow | null = null;
 const args = process.argv.slice(1);
 const serve = args.some(val => val === '--serve');
-const websql = args.some(val => val === '--websql');
 
 function createWindow(): BrowserWindow {
   const size = screen.getPrimaryDisplay().workAreaSize;
@@ -24,24 +18,28 @@ function createWindow(): BrowserWindow {
     x: 0,
     y: 0,
     autoHideMenuBar: true,
-    width: size.width / 2,
-    height: size.height / 2,
+    width: size.width * (3 / 4),
+    height: size.height * (3 / 4),
     webPreferences: {
       nodeIntegration: true,
       allowRunningInsecureContent: serve,
       contextIsolation: false,
+      webSecurity: !serve,
     },
   });
 
   if (serve) {
     const debug = require('electron-debug');
     debug();
+    win.webContents.openDevTools();
 
-    require('electron-reloader')(module);
-    win.loadURL(
-      'http://localhost:' +
-        (websql ? CLIENT_DEV_WEBSQL_APP_PORT : CLIENT_DEV_NORMAL_APP_PORT),
-    );
+    // TODO electron-reloader causes memory leaks and high CPU usage
+    // doNOTrequire('electron-reloader')(module); // this hangs frontend randomly
+    // import('electron-reloader').then(reloader => {
+    //   const reloaderFn = (reloader as any).default || reloader;
+    //   reloaderFn(module);
+    // });
+    win.loadURL(FRONTEND_HOST_URL_ELECTRON);
   } else {
     // Path when running electron executable
     let pathIndex = './index.html';
@@ -53,6 +51,11 @@ function createWindow(): BrowserWindow {
 
     const url = new URL(path.join('file:', __dirname, pathIndex));
     win.loadURL(url.href);
+
+    if (!ENV_ELECTRON_APP_BUILD_ELECTRON_SHOW_DEV_TOOLS) {
+      // Open the DevTools.
+      win.webContents.openDevTools();
+    }
   }
 
   // Emitted when the window is closed.
@@ -68,16 +71,19 @@ function createWindow(): BrowserWindow {
 
 async function startElectron() {
   try {
+    await app.whenReady();
+
+    await start();
+
     // This method will be called when Electron has finished
     // initialization and is ready to create browser windows.
     // Some APIs can only be used after this event occurs.
     // Added 400 ms to fix the black background issue while using transparent window. More detais at https://github.com/electron/electron/issues/15947
-    app.on('ready', () => setTimeout(createWindow, 400));
+    setTimeout(() => {
+      createWindow();
+    }, 400);
 
-    // Quit when all windows are closed.
     app.on('window-all-closed', () => {
-      // On OS X it is common for applications and their menu bar
-      // to stay active until the user quits explicitly with Cmd + Q
       if (process.platform !== 'darwin') {
         app.quit();
       }
@@ -90,9 +96,9 @@ async function startElectron() {
         createWindow();
       }
     });
-  } catch (e) {
-    // Catch Error
-    // throw e;
+  } catch (err) {
+    console.error('startElectron error:', err);
+    throw err;
   }
 }
 

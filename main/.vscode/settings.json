@@ -51,26 +51,22 @@
     "tslint.*": true,
     "*.schema.json": true
   },
-
   "workbench.colorCustomizations": {
     "activityBar.background": "#0084ff",
     "activityBar.foreground": "#000000",
-    "statusBar.background": "#999694",
+    "statusBar.background": "#9827b4",
     "statusBar.debuggingBackground": "#15d8ff"
   },
-
   "editor.rulers": [
     80,
     120
   ],
-
   "html.format.wrapAttributes": "force-aligned",
   "workbench.colorTheme": "Default Light+",
   "tslint.autoFixOnSave": true,
   "eslint.enable": true,
   "tslint.enable": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-
   "search.exclude": {
     "bin": true,
     "local_release": true,
@@ -104,14 +100,11 @@
     "**/src/lib/env/**/*.*": true,
     "**/*.rest": true
   },
-
-  "window.title": "taon-dev/taon-simple-org/main  [ ${activeEditorShort} ]",
+  "window.title": "taon-simple-org/main () [ ${activeEditorShort}]",
   "search.useIgnoreFiles": false,
-
   "search.include": [
     "**/src/**"
   ],
-
   "json.schemas": [
     {
       "fileMatch": [
@@ -126,72 +119,63 @@
       "url": "./taon-config-standalone.schema.json"
     }
   ],
-
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[json5]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "eslint.migration.2_x": "off",
   "prettier.enable": true,
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.inlineSuggest.enabled": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.endOfLine": "auto",
-
   "files.watcherExclude": {
-    "local_release/**": true
+    "local_release/**": true,
+    "tmp-*/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/dist-nocutsrc/**": true
   },
-
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
-
   "typescript.suggest.autoImports": false,
   "javascript.suggest.autoImports": false,
-
   "files.associations": {
     "tsconfig.json": "json"
-  }
+  },
+  "search.followSymlinks": false
 }
