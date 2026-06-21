@@ -14,6 +14,7 @@ import { _ } from 'tnp-core/src';
   selector: 'app-my-main-lib-cmp',
   templateUrl: './my-main-lib-cmp.component.html',
   styleUrls: ['./my-main-lib-cmp.component.scss'],
+  standalone: false,
 })
 export class MyMainLibCmpComponent implements OnInit {
   @HostBinding('style.minHeight.px') @Input() height: number = 100;
