@@ -1,6 +1,6 @@
 {
   "name": "taon-simple-org",
-  "version": "21.0.7",
+  "version": "21.0.6",
   "scripts": {},
   "author": "Dariusz Filipiak",
   "dependencies": {
@@ -77,6 +77,7 @@
     "@fancyapps/ui": "~6.1.14",
     "@iconify/icons-fa-solid": "~1.2.4",
     "@iconify/icons-mdi": "~1.2.48",
+    "@imgly/background-removal-node": "~1.4.5",
     "@inquirer/prompts": "~5.3.8",
     "@ionic/pwa-elements": "^3.3.0",
     "@mdi/js": "~7.4.47",
