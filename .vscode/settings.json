@@ -4,7 +4,6 @@
     "statusBar.background": "#9827b4",
     "statusBar.debuggingBackground": "#15d8ff"
   },
-  "workbench.colorTheme": "Light+",
   "editor.rulers": [
     80,
     120
@@ -42,7 +41,8 @@
     ".ai": true,
     "databases": true,
     "**/.ai": true,
-    "**/databases": true
+    "**/databases": true,
+    "sub-projects": true
   },
   "files.exclude": {
     "_changelog": true,
