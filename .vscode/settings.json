@@ -4,7 +4,7 @@
     "statusBar.background": "#9827b4",
     "statusBar.debuggingBackground": "#15d8ff"
   },
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Light+",
   "editor.rulers": [
     80,
     120
