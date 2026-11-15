@@ -4,7 +4,6 @@
     "statusBar.background": "#9827b4",
     "statusBar.debuggingBackground": "#15d8ff"
   },
-  "workbench.colorTheme": "Light+",
   "editor.rulers": [
     80,
     120
@@ -42,7 +41,10 @@
     ".ai": true,
     "databases": true,
     "**/.ai": true,
-    "**/databases": true
+    "**/databases": true,
+    "sub-projects": true,
+    "**/src/app.auto-gen-docs.md": true,
+    "**/src/app.auto-gen-ver.js": true
   },
   "files.exclude": {
     "_changelog": true,
@@ -151,7 +153,7 @@
       "fileMatch": [
         "/taon.jsonc"
       ],
-      "url": "./taon-config-container.schema.json"
+      "url": "./taon-config.schema.json"
     }
   ],
   "files.watcherExclude": {
@@ -159,7 +161,8 @@
     "tmp-*/**": true,
     "**/node_modules/**": true,
     "**/dist/**": true,
-    "**/dist-nocutsrc/**": true
+    "**/dist-nocutsrc/**": true,
+    "**/src/**": true
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
